@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox GridPane.rowIndex="2" GridPane.rowSpan="6" GridPane.columnIndex="1" GridPane.columnSpan="1" minHeight="400" xmlns="http://javafx.com/javafx/17">
+    <HBox>
+        <Label minWidth="-Infinity" text="Tours:  "></Label>
+        <StackPane>
+            <TextField></TextField>
+        </StackPane>
+        <StackPane>
+            <Button text="+" styleClass="mainButton"/>
+        </StackPane>
+    </HBox>
+    <ListView></ListView>
+</VBox>
+

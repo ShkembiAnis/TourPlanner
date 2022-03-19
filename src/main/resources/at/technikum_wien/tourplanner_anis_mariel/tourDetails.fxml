@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox GridPane.rowIndex="2" GridPane.columnIndex ="2" GridPane.columnSpan="3" prefHeight="200" xmlns="http://javafx.com/javafx">
+    <Label minWidth="-Infinity" text="Tours Description"></Label>
+    <ListView></ListView>
+</VBox>

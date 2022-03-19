@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+
+<?import java.net.URL?>
+
+<GridPane hgap="10.0" prefHeight="387.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.technikum_wien.tourplanner_anis_mariel.MainViewController">
+    <stylesheets>
+        <URL value="@layoutCSS.css"></URL>
+    </stylesheets>
+
+    <children>
+
+        <VBox alignment="TOP_LEFT" GridPane.rowIndex="0" GridPane.columnSpan="3">
+            <MenuBar prefHeight="27" prefWidth="Infinity" styleClass="MenuBar" GridPane.rowIndex="0" >
+                <menus>
+                    <Menu mnemonicParsing="false" text="File">
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Option" />
+                </menus>
+            </MenuBar>
+        </VBox>
+
+        <fx:include source="listSearch.fxml"/>
+        <fx:include source="tourAdd.fxml"/>
+        <fx:include source="tourDetails.fxml" />
+        <fx:include source="tourLogs.fxml" />
+
+    </children>
+
+
+
+
+    <Label fx:id="welcomeText" />
+</GridPane>
