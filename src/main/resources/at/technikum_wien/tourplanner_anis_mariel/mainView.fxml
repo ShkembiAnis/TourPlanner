@@ -40,8 +40,5 @@
 
     </children>
 
-
-
-
     <Label fx:id="welcomeText" />
 </GridPane>
