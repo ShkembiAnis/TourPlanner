@@ -8,4 +8,6 @@ module at.technikum_wien.tourplanner_anis_mariel {
 
     opens at.technikum_wien.tourplanner_anis_mariel to javafx.fxml;
     exports at.technikum_wien.tourplanner_anis_mariel;
+    exports at.technikum_wien.tourplanner_anis_mariel.tourAdd;
+    opens at.technikum_wien.tourplanner_anis_mariel.tourAdd to javafx.fxml;
 }
