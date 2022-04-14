@@ -6,10 +6,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
+<VBox xmlns:fx="http://javafx.com/fxml"
       GridPane.rowIndex="2" GridPane.rowSpan="6" GridPane.columnIndex="1"
-      GridPane.columnSpan="1" minHeight="400" fx:controller="at.technikum_wien.tourplanner_anis_mariel.tourAdd.TourAddController">
+      GridPane.columnSpan="1" minHeight="400"
+      fx:controller="at.technikum_wien.tourplanner_anis_mariel.tourAdd.TourAddController"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://javafx.com/fxml ">
     <HBox>
         <Label minWidth="-Infinity" text="Tours:  "></Label>
         <StackPane>

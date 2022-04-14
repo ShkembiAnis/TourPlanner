@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4aec2854-26e0-4424-a2c2-1f140204d08a" name="Changes" comment="whatever">
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourAddModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourItemModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/tourItem.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/tourList.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourListModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/TourAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourAddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourAddController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourAddModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourAddModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +68,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="xml.defaultSchemas" />
   </component>
   <component name="RunManager" selected="Maven.TourPlanner_Anis_Mariel [javafx:run]">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -142,7 +136,7 @@
       <workItem from="1647932943118" duration="2225000" />
       <workItem from="1648109154645" duration="1317000" />
       <workItem from="1648289247434" duration="5867000" />
-      <workItem from="1648976979358" duration="3344000" />
+      <workItem from="1648976979358" duration="7528000" />
     </task>
     <servers />
   </component>
@@ -163,5 +157,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="whatever" />
     <option name="LAST_COMMIT_MESSAGE" value="whatever" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
