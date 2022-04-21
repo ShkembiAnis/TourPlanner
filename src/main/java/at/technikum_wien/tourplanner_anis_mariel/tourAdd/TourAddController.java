@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.function.Consumer;
 
-public class TourAddController  implements Initializable{
+public class TourAddController{
 
 
     private final TourAddModel tourAddModel;
@@ -20,7 +20,12 @@ public class TourAddController  implements Initializable{
     private TextField tourName;
     private Consumer<TourAddModel> newTourListener;
 
-    public TourAddController(TourAddModel tourAddModel) {
+
+    public TourAddController(){
+        this.tourAddModel = new TourAddModel();
+    }
+
+    public TourAddController(TourAddModel tourAddModel){
         this.tourAddModel = tourAddModel;
     }
 
@@ -32,8 +37,8 @@ public class TourAddController  implements Initializable{
         this.newTourListener = listenToNewTour;
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.tourName.textProperty().bindBidirectional(this.tourAddModel.nameProperty());
-        }
+//    @Override
+//    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        this.tourName.textProperty().bindBidirectional(this.tourAddModel.nameProperty());
+//        }
 }
