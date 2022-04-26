@@ -1,5 +1,7 @@
 package at.technikum_wien.tourplanner_anis_mariel.tourAdd;
 
+import at.technikum_wien.tourplanner_anis_mariel.MainViewController;
+
 public class ControllerFactory {
     private final TourListModel tourListModel;
     private final TourModel tourModel;
@@ -14,8 +16,8 @@ public class ControllerFactory {
     public Object create(Class controllerClass) throws Exception {
         if (controllerClass == TourAddController.class) {
             return new TourAddController(this.tourAddModel);
-        } else if (controllerClass == TourListController.class) {
-            return new TourListController(this.tourListModel);
+        } else if (controllerClass == MainViewController.class) {
+            return new MainViewController(this.tourListModel);
         } else if (controllerClass == TourListingController.class) {
             return new TourListingController(this.tourListModel);
         }else {

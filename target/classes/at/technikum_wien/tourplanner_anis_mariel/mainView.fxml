@@ -40,5 +40,5 @@
 
     </children>
 
-    <Label fx:id="welcomeText" />
+    <Label fx:id="TourPlanner" />
 </GridPane>

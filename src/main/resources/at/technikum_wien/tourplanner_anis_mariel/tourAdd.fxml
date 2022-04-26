@@ -19,6 +19,6 @@
             <Button fx:id="buttonAddTour" text="+" onAction="#addTour" styleClass="mainButton"/>
         </StackPane>
     </HBox>
-    <fx:include source="tourList.fxml"/>
+    <fx:include source="tourListing.fxml"/>
 </VBox>
 
