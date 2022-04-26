@@ -16,7 +16,7 @@
             <TextField fx:id="tourName"></TextField>
         </StackPane>
         <StackPane>
-            <Button fx:id="buttonAddTour" text="+" styleClass="mainButton"/>
+            <Button fx:id="buttonAddTour" text="+" onAction="#addTour" styleClass="mainButton"/>
         </StackPane>
     </HBox>
     <fx:include source="tourList.fxml"/>
