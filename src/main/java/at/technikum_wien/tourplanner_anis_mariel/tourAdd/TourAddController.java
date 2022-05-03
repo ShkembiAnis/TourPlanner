@@ -14,8 +14,8 @@ import java.util.function.Consumer;
 
 public class TourAddController implements Initializable{
 
-
     private final TourAddModel tourAddModel;
+
     @FXML
     private TextField tourName;
     private Consumer<TourAddModel> newTourListener;

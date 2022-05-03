@@ -16,9 +16,9 @@
             <TextField fx:id="tourName"></TextField>
         </StackPane>
         <StackPane>
-            <Button fx:id="buttonAddTour" text="+" onAction="#addTour" styleClass="mainButton"/>
+            <Button text="+" onAction="#addTour" styleClass="mainButton"/>
         </StackPane>
     </HBox>
-    <fx:include source="tourListing.fxml"/>
+    <fx:include fx:id = "tourListing" source = "tourListing.fxml"/>
 </VBox>
 

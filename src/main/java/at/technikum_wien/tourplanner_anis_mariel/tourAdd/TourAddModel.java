@@ -7,7 +7,6 @@ public class TourAddModel {
 
     private StringProperty name = new SimpleStringProperty();
 
-
     public String getName() {
         return name.get();
     }

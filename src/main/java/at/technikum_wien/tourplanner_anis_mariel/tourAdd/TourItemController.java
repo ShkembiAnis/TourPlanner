@@ -1,11 +1,11 @@
 package at.technikum_wien.tourplanner_anis_mariel.tourAdd;
 
+import at.technikum_wien.tourplanner_anis_mariel.TourItemModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.util.converter.NumberStringConverter;
 
 import java.util.function.Consumer;
 
@@ -21,9 +21,11 @@ public class TourItemController {
     @FXML
     private Node box = new HBox();
 
-    public TourItemController() { }
+    public TourItemController(){}
 
-    public Node getProductItemBox() {
+    //public TourItemController(TourItemModel tourItemModel) { }
+
+    public Node getTourItemBox() {
         return box;
     }
 
@@ -36,7 +38,7 @@ public class TourItemController {
         this.onDeleteTourConsumer.accept(this.tour);
     }
 
-    public void addListenerForDeleteProduct(Consumer<TourModel> listener) {
+    public void addListenerForDeleteTour(Consumer<TourModel> listener) {
         this.onDeleteTourConsumer = listener;
     }
 

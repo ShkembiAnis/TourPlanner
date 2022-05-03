@@ -13,11 +13,11 @@ public class TourListModel {
         return tours;
     }
 
-    public void addProduct(TourModel product) {
-        this.tours.add(product);
+    public void addTour(TourModel tour) {
+        this.tours.add(tour);
     }
 
-    public void removeProduct(TourModel tour) {
+    public void removeTour(TourModel tour) {
         this.tours.remove(tour);
     }
 }

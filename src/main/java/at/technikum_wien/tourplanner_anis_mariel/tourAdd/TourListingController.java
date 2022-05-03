@@ -1,5 +1,6 @@
 package at.technikum_wien.tourplanner_anis_mariel.tourAdd;
 
+import at.technikum_wien.tourplanner_anis_mariel.TourItemModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -22,10 +23,10 @@ public class TourListingController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.tours.setItems(this.tourListModel.getTours());
         this.tours.setCellFactory(
-                productModelListView -> new TourItemModel(p -> this.deleteProduct(p)));
+                tourModelListView -> new TourItemModel(p -> this.deleteTour(p)));
     }
 
-    private void deleteProduct(TourModel tourModel) {
-        this.tourListModel.removeProduct(tourModel);
+    private void deleteTour(TourModel tourModel) {
+        this.tourListModel.removeTour(tourModel);
     }
 }
