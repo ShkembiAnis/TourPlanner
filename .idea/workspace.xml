@@ -6,20 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4aec2854-26e0-4424-a2c2-1f140204d08a" name="Changes" comment="whatever">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/ControllerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourAddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourAddModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourAddModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/TourItemModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourListModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourListingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/tourAdd/TourListingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/mainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/mainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/TourItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/TourItemModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +144,7 @@
       <workItem from="1649928937507" duration="1777000" />
       <workItem from="1650110595940" duration="10702000" />
       <workItem from="1651051772367" duration="1867000" />
-      <workItem from="1651126629863" duration="6530000" />
+      <workItem from="1651126629863" duration="10065000" />
     </task>
     <servers />
   </component>
