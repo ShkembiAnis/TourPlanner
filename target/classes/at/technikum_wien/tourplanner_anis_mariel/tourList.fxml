@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="at.technikum_wien.tourplanner_anis_mariel.tourAdd.TourListController"
+            prefHeight="400.0" prefWidth="200.0">
+
+    <fx:include fx:id="tourAdd" source="tourAdd.fxml"></fx:include>
+    <fx:include fx:id="tourListing" source="tourListing.fxml"></fx:include>
+
+</VBox>

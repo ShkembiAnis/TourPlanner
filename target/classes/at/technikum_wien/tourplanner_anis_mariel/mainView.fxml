@@ -33,15 +33,12 @@
             </MenuBar>
         </VBox>
 
-        <fx:include source="listSearch.fxml"/>
-        <fx:include source="tourAdd.fxml"/>
+        <fx:include fx:id = "tourSearch" source="listSearch.fxml"/>
+        <fx:include fx:id = "tourAdd" source="tourAdd.fxml"/>
         <fx:include source="tourDetails.fxml" />
         <fx:include source="tourLogs.fxml" />
 
     </children>
 
-
-
-
-    <Label fx:id="welcomeText" />
+    <Label fx:id="TourPlanner" />
 </GridPane>

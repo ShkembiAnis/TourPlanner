@@ -81,7 +81,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                at.technikum_wien.tourplanner_anis_mariel/at.technikum_wien.tourplanner_anis_mariel.HelloApplication
+                                at.technikum_wien.tourplanner_anis_mariel/at.technikum_wien.tourplanner_anis_mariel.MainApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
