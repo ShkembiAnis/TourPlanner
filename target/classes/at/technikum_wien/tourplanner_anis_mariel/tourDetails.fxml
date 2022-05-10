@@ -6,7 +6,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox GridPane.rowIndex="2" GridPane.columnIndex ="2" GridPane.columnSpan="3" prefHeight="200" xmlns="http://javafx.com/javafx">
+<VBox GridPane.rowIndex="2" GridPane.columnIndex="2" GridPane.columnSpan="3" prefHeight="200"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourDetails.TourDetailsController">
+
     <Label minWidth="-Infinity" text="Tours Description"></Label>
-    <ListView></ListView>
+    <ListView>
+        <Label text="Tour: ">
+
+        </Label>
+        <Label text="From: ">
+
+        </Label>
+        <Label text="To: ">
+
+        </Label>
+        <Label text="Means of Transport: ">
+
+        </Label>
+        <Label text="Duration: ">
+
+        </Label>
+    </ListView>
 </VBox>

@@ -1,4 +1,4 @@
-package at.technikum_wien.tourplanner_anis_mariel.tourAdd;
+package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

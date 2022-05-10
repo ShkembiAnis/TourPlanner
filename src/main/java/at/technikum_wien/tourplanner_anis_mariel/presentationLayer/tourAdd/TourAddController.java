@@ -1,12 +1,9 @@
-package at.technikum_wien.tourplanner_anis_mariel.tourAdd;
+package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.util.converter.NumberStringConverter;
 
 import java.net.URL;
 import java.util.ResourceBundle;

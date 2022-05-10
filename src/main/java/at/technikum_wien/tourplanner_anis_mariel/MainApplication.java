@@ -1,6 +1,6 @@
 package at.technikum_wien.tourplanner_anis_mariel;
 
-import at.technikum_wien.tourplanner_anis_mariel.tourAdd.ControllerFactory;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.ControllerFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;

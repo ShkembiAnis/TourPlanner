@@ -1,9 +1,7 @@
 package at.technikum_wien.tourplanner_anis_mariel;
 
-import at.technikum_wien.tourplanner_anis_mariel.tourAdd.TourItemController;
-import at.technikum_wien.tourplanner_anis_mariel.tourAdd.TourModel;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourItemController;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import java.util.function.Consumer;
