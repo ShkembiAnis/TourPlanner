@@ -23,7 +23,7 @@ public class TourAddController implements Initializable{
 
     public void addTour(ActionEvent actionEvent) {
         this.newTourListener.accept(this.tourAddModel);
-        this.tourAddModel.addTour();
+        //this.tourAddModel.addTour();
     }
 
     public void addListener(Consumer<TourAddModel> listenToNewTour) {

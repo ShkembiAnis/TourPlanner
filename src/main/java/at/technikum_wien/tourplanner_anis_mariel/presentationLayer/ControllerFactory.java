@@ -2,8 +2,8 @@ package at.technikum_wien.tourplanner_anis_mariel.presentationLayer;
 
 import at.technikum_wien.tourplanner_anis_mariel.MainViewController;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.*;
-import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourDetails.TourDetailsController;
-import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourDetails.TourDetailsModel;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourDetailsController;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourDetailsModel;
 
 public class ControllerFactory {
     private final TourListModel tourListModel;
@@ -25,7 +25,7 @@ public class ControllerFactory {
         } else if (controllerClass == MainViewController.class) {
             return new MainViewController(this.tourListModel);
         } else if (controllerClass == TourListingController.class) {
-            return new TourListingController(this.tourListModel);
+            return new TourListingController(this.tourListModel, this.tourDetailsModel);
         } else if (controllerClass == TourDetailsController.class) {
             return new TourDetailsController(this.tourDetailsModel);
         }else {

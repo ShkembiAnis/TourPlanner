@@ -9,7 +9,7 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       GridPane.rowIndex="2" GridPane.rowSpan="6" GridPane.columnIndex="1"
-      GridPane.columnSpan="1" minHeight="400" fx:controller="at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourAddController">
+      GridPane.columnSpan="1" minHeight="600" fx:controller="at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourAddController">
     <HBox>
         <Label minWidth="-Infinity" text="Tours:  "></Label>
         <StackPane>

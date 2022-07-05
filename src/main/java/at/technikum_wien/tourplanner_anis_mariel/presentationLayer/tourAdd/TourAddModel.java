@@ -8,7 +8,7 @@ import javafx.beans.property.StringProperty;
 public class TourAddModel {
 
     private StringProperty name = new SimpleStringProperty();
-    IBusinessLayer businessLayer = BusinessFactory.getBusiness();
+    //IBusinessLayer businessLayer = BusinessFactory.getBusiness();
 
     public String getName() {
         return name.get();
@@ -18,7 +18,7 @@ public class TourAddModel {
         return name;
     }
 
-    public void addTour() {
-        businessLayer.tourModel();
-    }
+//    public void addTour() {
+//        businessLayer.tourModel();
+//    }
 }

@@ -6,26 +6,74 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox GridPane.rowIndex="2" GridPane.columnIndex="2" GridPane.columnSpan="3" prefHeight="200"
+<?import org.controlsfx.control.Rating?>
+<?import javafx.scene.image.ImageView?>
+<VBox GridPane.rowIndex="2" GridPane.columnIndex="2" GridPane.columnSpan="3" prefHeight="300"
       xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourDetails.TourDetailsController">
+      fx:controller="at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourDetailsController">
 
-    <Label minWidth="-Infinity" text="Tours Description"></Label>
-    <ListView>
-        <Label text="Tour: ">
+    <TabPane tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Details">
+            <VBox>
+                <HBox>
+                    <Pane HBox.hgrow="ALWAYS" />
+                    <Button text="Edit" fx:id="editButton" styleClass="editButton" onAction="#editMode"></Button>
+                </HBox>
 
-        </Label>
-        <Label text="From: ">
+                <HBox >
+                    <Label text="Tour name:"></Label>
+                    <StackPane>
+                        <Label text="Template" fx:id="tourNameLabel"></Label>
+                        <TextField fx:id="tourName"></TextField>
+                    </StackPane>
+                </HBox>
 
-        </Label>
-        <Label text="To: ">
 
-        </Label>
-        <Label text="Means of Transport: ">
 
-        </Label>
-        <Label text="Duration: ">
+                <HBox >
+                    <Label text="From:"></Label>
+                    <StackPane>
+                        <Label text="Template" fx:id="tourFromLabel"></Label>
+                        <TextField fx:id="tourFrom"></TextField>
+                    </StackPane>
+                </HBox>
 
-        </Label>
-    </ListView>
+                <HBox >
+                    <Label text="To:"></Label>
+                    <StackPane>
+                        <Label text="Template" fx:id="tourToLabel"></Label>
+                        <TextField fx:id="tourTo"></TextField>
+                    </StackPane>
+                </HBox>
+
+                <HBox >
+                    <Label text="Description:"></Label>
+                    <StackPane>
+                        <Label text="Template" fx:id="tourDescLabel"></Label>
+                        <TextField fx:id="tourDesc"></TextField>
+                    </StackPane>
+
+                </HBox>
+
+                <HBox >
+                    <Label text="Distance:"></Label>
+                    <StackPane>
+                        <Label text="Template" fx:id="tourDistLabel"></Label>
+                        <TextField fx:id="tourDist"></TextField>
+                    </StackPane>
+                </HBox>
+
+                <HBox>
+                    <Pane HBox.hgrow="ALWAYS" />
+                    <Button text="Save" fx:id="saveButton" styleClass="saveButton" onAction="#saveTour"></Button>
+                </HBox>
+            </VBox>
+        </Tab>
+        <Tab text="Map" fx:id="map_tab" >
+            <VBox>
+                <ImageView fx:id="imageView" fitWidth="-Infinity" fitHeight="-Infinity">
+                </ImageView>
+            </VBox>
+        </Tab>
+    </TabPane>
 </VBox>
