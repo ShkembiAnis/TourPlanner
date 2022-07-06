@@ -10,6 +10,7 @@ at\technikum_wien\tourplanner_anis_mariel\MainViewController.class
 at\technikum_wien\tourplanner_anis_mariel\businessLayer\BusinessFactory.class
 at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourListingController.class
 at\technikum_wien\tourplanner_anis_mariel\businessLayer\BusinessImplementation.class
+at\technikum_wien\tourplanner_anis_mariel\businessLayer\ConfigManager.class
 at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourDetailsController.class
 at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourModel.class
 at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourLog\TourLogModel.class

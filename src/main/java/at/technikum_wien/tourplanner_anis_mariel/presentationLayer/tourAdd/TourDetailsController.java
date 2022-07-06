@@ -1,5 +1,6 @@
 package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 
+import at.technikum_wien.tourplanner_anis_mariel.businessLayer.ConfigManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import org.controlsfx.control.Rating;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 

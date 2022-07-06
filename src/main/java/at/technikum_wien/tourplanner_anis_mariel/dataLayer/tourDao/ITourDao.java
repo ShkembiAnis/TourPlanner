@@ -5,9 +5,12 @@ import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourM
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public interface ITourDao {
-    int addTour(TourAddModel tourAddModel)throws SQLException, IOException;
-    int updateTourDetails(TourModel tourModel) throws SQLException;
-    int deleteTourDetails(TourModel tourModel) throws SQLException;
+    TourModel findItemByID(Integer itemId) throws SQLException;
+    TourModel addTour(TourModel tourModel)throws SQLException, IOException;
+    boolean updateTourItem(TourModel tourModel) throws SQLException;
+    List<TourModel> GetItems() throws SQLException, IOException;
+    boolean deleteTourItem (Integer deleteId) throws SQLException;
 }
