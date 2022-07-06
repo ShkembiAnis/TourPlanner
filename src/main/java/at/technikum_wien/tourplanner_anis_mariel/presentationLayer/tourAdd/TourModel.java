@@ -4,7 +4,14 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class TourModel {
+
     private StringProperty name = new SimpleStringProperty();
+
+    public TourModel() {
+    }
+
+    public TourModel(Integer Id, String name) {
+    }
 
     public static TourModel From(TourAddModel source) {
         var newInstance = new TourModel();

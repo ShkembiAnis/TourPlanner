@@ -1,5 +1,6 @@
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourModel.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\businessLayer\BusinessFactory.java
+C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\dataLayer\CreateTourDao.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourListModel.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourAddController.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\dataLayer\DataFactory.java
@@ -10,14 +11,14 @@ C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wi
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\businessLayer\BusinessImplementation.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\module-info.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\ControllerFactory.java
+C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourDetailsModel.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\dataLayer\tourDao\ITourDao.java
+C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\businessLayer\ConfigManager.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\dataLayer\IDataLayer.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourLog\TourLogController.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\businessLayer\IBusinessLayer.java
-C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourDetails\TourDetailsController.java
+C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourDetailsController.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\MainApplication.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourAddModel.java
-C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourDetails\TourDetailsModel.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourLog\TourLogModel.java
-C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\dataLayer\CreateTour.java
 C:\Users\user\IdeaProjects\TourPlanner_Anis_Mariel\src\main\java\at\technikum_wien\tourplanner_anis_mariel\dataLayer\DatabaseConnection.java

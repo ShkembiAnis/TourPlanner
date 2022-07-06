@@ -1,6 +1,8 @@
 package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 
+import at.technikum_wien.tourplanner_anis_mariel.businessLayer.BusinessFactory;
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.ConfigManager;
+import at.technikum_wien.tourplanner_anis_mariel.businessLayer.IBusinessLayer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,12 +13,15 @@ import javafx.scene.image.ImageView;
 import org.controlsfx.control.Rating;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class TourDetailsController implements Initializable {
 
     private final TourDetailsModel tourDetailsModel;
+    private IBusinessLayer businessLayer;
 
     @FXML
     private ImageView imageView;
@@ -73,6 +78,7 @@ public class TourDetailsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Binding text value
+        businessLayer = BusinessFactory.getBusiness();
         this.tourName.textProperty().bindBidirectional(this.tourDetailsModel.getTourNameProperty());
         this.tourDesc.textProperty().bindBidirectional(this.tourDetailsModel.getTourDescProperty());
         this.tourFrom.textProperty().bindBidirectional(this.tourDetailsModel.getTourFromProperty());
@@ -106,12 +112,17 @@ public class TourDetailsController implements Initializable {
     }
 
     // onSave click bajm update listen
-    public void saveTour(ActionEvent actionEvent) {
+    public void saveTour(ActionEvent actionEvent) throws SQLException, IOException {
         //marrim modelin e elementit te listes
         TourModel tempTourModel = tourDetailsModel.getTourModel();
 
         // updetojm elementint e listes
         tempTourModel.setName(tourDetailsModel.getTourName());
+
+        //save to database
+        businessLayer.CreateTourItem(tempTourModel);
+
+
 
     }
 }

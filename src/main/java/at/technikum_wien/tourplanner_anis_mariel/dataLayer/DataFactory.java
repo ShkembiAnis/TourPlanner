@@ -36,7 +36,7 @@ public class DataFactory {
         return null;
     }
 
-    private static ITourDao CreateTourDao(){
+    public static ITourDao CreateTourDao(){
         try{
             Class<CreateTourDao> createDaoClass = (Class<CreateTourDao>) Class.forName(CreateTourDao.class.getName());
             return createDaoClass.getConstructor().newInstance();

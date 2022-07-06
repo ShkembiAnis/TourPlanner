@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ITourDao {
-    TourModel findItemByID(Integer itemId) throws SQLException;
+    TourModel findItemByID(Integer itemId) throws SQLException, IOException;
     TourModel addTour(TourModel tourModel)throws SQLException, IOException;
     boolean updateTourItem(TourModel tourModel) throws SQLException;
     List<TourModel> GetItems() throws SQLException, IOException;

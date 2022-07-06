@@ -2,6 +2,7 @@ at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourAddContr
 at\technikum_wien\tourplanner_anis_mariel\dataLayer\DataFactory.class
 at\technikum_wien\tourplanner_anis_mariel\MainApplication.class
 at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourDetailsModel.class
+at\technikum_wien\tourplanner_anis_mariel\dataLayer\CreateTourDao.class
 at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourListModel.class
 at\technikum_wien\tourplanner_anis_mariel\dataLayer\DatabaseConnection.class
 at\technikum_wien\tourplanner_anis_mariel\dataLayer\IDataLayer.class
@@ -15,7 +16,6 @@ at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourDetailsC
 at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourModel.class
 at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourLog\TourLogModel.class
 at\technikum_wien\tourplanner_anis_mariel\TourItemModel.class
-at\technikum_wien\tourplanner_anis_mariel\dataLayer\CreateTour.class
 at\technikum_wien\tourplanner_anis_mariel\businessLayer\IBusinessLayer.class
 at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourLog\TourLogController.class
 at\technikum_wien\tourplanner_anis_mariel\presentationLayer\tourAdd\TourItemController.class
