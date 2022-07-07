@@ -137,14 +137,19 @@ public class DatabaseConnection implements IDataLayer{
         List<TourModel> tourItemList = new ArrayList<>();
 
         while (result.next()) {
-            tourItemList.add(new TourModel(
-                    result.getInt("tourid_pk"),
-                    result.getString("tourname")
+            TourModel temp = new TourModel();
+            temp.setName(result.getString("tourname"));
+
+            tourItemList.add(temp);
+
+            //tourItemList.add(new TourModel(
+              //      result.getInt("tourid_pk"),
+                //    result.getString("tourname")
 //                    result.getString("Start"),
 //                    result.getString("End"),
 //                    result.getString("Description"),
 //                    result.getFloat("Distance")
-            ));
+           // ));
         }
         return tourItemList;
     }

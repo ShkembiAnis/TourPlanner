@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class TourListModel {
 
     private IBusinessLayer businessLayer = BusinessFactory.getBusiness();
-    private ObservableList<TourModel> tours = FXCollections.observableArrayList(businessLayer.GetItems());
+    private ObservableList<TourModel> tours = FXCollections.observableArrayList(this.businessLayer.GetItems());
 
     public TourListModel() throws SQLException, IOException {
     }
@@ -20,9 +20,9 @@ public class TourListModel {
         return tours;
     }
 
-//    public void setTours(ObservableList<TourModel> tours){
-//        this.tours = tours;
-//    }
+    public void setTours(ObservableList<TourModel> tours){
+        this.tours = tours;
+    }
 
     public void addTour(TourModel tour) {
         this.tours.add(tour);
@@ -31,4 +31,5 @@ public class TourListModel {
     public void removeTour(TourModel tour) {
         this.tours.remove(tour);
     }
+
 }
