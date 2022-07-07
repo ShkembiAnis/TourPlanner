@@ -13,8 +13,7 @@ public interface IDataLayer {
     int insertTour (String query, ArrayList<Object> parameters) throws SQLException;
     int updateTour (String query, ArrayList<Object> parameters) throws SQLException;
     int deleteTour (String query, ArrayList<Object> parameters) throws SQLException;
-    Integer getNextId(String query) throws SQLException, FileNotFoundException;
+    Integer getMaxId(String query) throws SQLException, FileNotFoundException;
     <T>List<T> TourReader(String query, Class<T> tourType) throws SQLException;
     <T>List<T> TourReader(String query, ArrayList<Object> parameters, Class<T> tourType) throws SQLException, IOException;
-
 }

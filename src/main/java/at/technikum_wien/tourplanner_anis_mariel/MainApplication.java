@@ -8,10 +8,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class MainApplication extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException, SQLException {
         ControllerFactory factory = new ControllerFactory();
         FXMLLoader fxmlLoader = getFxmlLoader(factory);
         Scene scene = new Scene(fxmlLoader.load(), 1200, 700);

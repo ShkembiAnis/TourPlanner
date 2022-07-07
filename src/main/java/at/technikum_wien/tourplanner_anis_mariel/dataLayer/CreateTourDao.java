@@ -16,9 +16,10 @@ public class CreateTourDao implements ITourDao {
 
     public final IDataLayer dataLayer;
 
-    public String SQL_FIND_BY_ID = "SELECT * FROM \"tour\" WHERE \"tourid_pk\"=CAST(? AS INTEGER);";
-    public String SQL_INSERT_TOUR = "INSERT INTO \"tour\" (\"tourid_pk\", \"tourname\") VALUES (CAST(? AS INTEGER), ?);";
-    public String SQL_MAX_ID = "SELECT CAST(max(tourid_pk)+1 as INTEGER) FROM tour";
+    private final String SQL_FIND_BY_ID = "SELECT * FROM \"tour\" WHERE \"tourid_pk\"=CAST(? AS INTEGER);";
+    private final String SQL_INSERT_TOUR = "INSERT INTO \"tour\" (\"tourid_pk\", \"tourname\") VALUES (CAST(? AS INTEGER), ?);";
+    private final String SQL_NEXT_ID = "SELECT CAST(max(tourid_pk)+1 as INTEGER) FROM tour";
+    private final String SQL_GET_ALL_ITEMS = "SELECT * FROM \"tour\";";
 
     public CreateTourDao() throws FileNotFoundException {
         dataLayer = DataFactory.getDatabase();
@@ -55,7 +56,7 @@ public class CreateTourDao implements ITourDao {
 
     @Override
     public List<TourModel> GetItems() throws SQLException, IOException {
-        return null;
+        return dataLayer.TourReader(SQL_GET_ALL_ITEMS, TourModel.class);
     }
 
     @Override
@@ -65,7 +66,7 @@ public class CreateTourDao implements ITourDao {
 
     private ArrayList<Object> createTourItemParam(TourModel tourModel) throws SQLException, FileNotFoundException {
         ArrayList<Object> parameters = new ArrayList<>();
-        int temp = dataLayer.getNextId(SQL_MAX_ID);
+        int temp = dataLayer.getMaxId(SQL_NEXT_ID);
         parameters.add(temp);
         parameters.add(tourModel.getName());
 

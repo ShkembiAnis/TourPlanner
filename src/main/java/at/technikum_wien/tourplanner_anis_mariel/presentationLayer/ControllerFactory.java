@@ -5,6 +5,9 @@ import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.*;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourDetailsController;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourDetailsModel;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 public class ControllerFactory {
     private final TourListModel tourListModel;
     private final TourModel tourModel;
@@ -12,7 +15,7 @@ public class ControllerFactory {
     private final TourDetailsModel tourDetailsModel ;
 
 
-    public ControllerFactory() {
+    public ControllerFactory() throws SQLException, IOException {
         this.tourListModel = new TourListModel();
         this.tourModel = new TourModel();
         this.tourAddModel = new TourAddModel();

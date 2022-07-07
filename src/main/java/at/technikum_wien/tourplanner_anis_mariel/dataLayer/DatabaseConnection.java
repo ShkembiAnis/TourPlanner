@@ -72,7 +72,7 @@ public class DatabaseConnection implements IDataLayer{
     }
 
     @Override
-    public Integer getNextId(String query) throws SQLException, FileNotFoundException {
+    public Integer getMaxId(String query) throws SQLException, FileNotFoundException {
         //Get last inserted Tours id
 
         try(Connection conn = CreateConnection();
