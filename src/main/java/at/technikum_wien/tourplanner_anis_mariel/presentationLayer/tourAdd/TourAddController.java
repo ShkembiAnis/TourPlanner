@@ -1,18 +1,22 @@
 package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 
+import at.technikum_wien.tourplanner_anis_mariel.businessLayer.BusinessFactory;
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.IBusinessLayer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.function.Consumer;
 
 public class TourAddController implements Initializable{
 
     private final TourAddModel tourAddModel;
+    private IBusinessLayer businessLayer = BusinessFactory.getBusiness();
 
     @FXML
     private TextField tourName;
@@ -22,9 +26,11 @@ public class TourAddController implements Initializable{
         this.tourAddModel = tourAddModel;
     }
 
-    public void addTour(ActionEvent actionEvent) {
+    public void addTour(ActionEvent actionEvent) throws SQLException, IOException {
         this.newTourListener.accept(this.tourAddModel);
-        //this.tourAddModel.addTour();
+        TourModel tempTourModel = new TourModel();
+        tempTourModel.setName(tourAddModel.getName());
+        businessLayer.CreateTourItem(tempTourModel);
     }
 
     public void addListener(Consumer<TourAddModel> listenToNewTour) {

@@ -10,7 +10,7 @@ public class TourDetailsModel {
     private StringProperty tourFrom;
     private StringProperty tourTo;
     private StringProperty tourDesc;
-    private StringProperty tourDistance;
+    private StringProperty tourDetail;
 
     private StringProperty tourNameLabel;
     private StringProperty editButton;
@@ -27,7 +27,7 @@ public class TourDetailsModel {
         tourDesc = new SimpleStringProperty("");
         tourFrom = new SimpleStringProperty("");
         tourTo = new SimpleStringProperty("");
-        tourDistance = new SimpleStringProperty("");
+        tourDetail = new SimpleStringProperty("");
 
         tourNameLabel = new SimpleStringProperty("Dummy");
 
@@ -37,7 +37,7 @@ public class TourDetailsModel {
     }
 
     public String getTourDistance() {
-        return tourDistance.get();
+        return tourDetail.get();
     }
 
     public String getTourName(){
@@ -64,8 +64,8 @@ public class TourDetailsModel {
         return tourFrom;
     }
 
-    public void setTourDistance(String tourDistance) {
-        this.tourDistance.set(tourDistance);
+    public void setTourDetail(String tourDistance) {
+        this.tourDetail.set(tourDistance);
     }
 
     public String getTourTo() {
@@ -114,7 +114,7 @@ public class TourDetailsModel {
 
 
     private void setTourDetailDistance(String tourDistance) {
-        this.tourDistance.set(tourDistance);
+        this.tourDetail.set(tourDistance);
     }
 
     public void setTourDetailTo(String tourTo) {
@@ -134,13 +134,14 @@ public class TourDetailsModel {
     }
 
     public StringProperty getTourDistanceProperty() {
-        return tourDistance;
+        return tourDetail;
     }
 
     //prej majtas vlerat ruhet djathtas
-    public void setTourModel(TourModel tourModelList) {
-        setTourDetailName(tourModelList.getName());
-        this.tourModel = tourModelList;
+    public void setTourModel(TourModel tourModel) {
+        setTourDetailName(tourModel.getName());
+
+        this.tourModel = tourModel;
     }
 
     //marrim emrin prej descriptionit

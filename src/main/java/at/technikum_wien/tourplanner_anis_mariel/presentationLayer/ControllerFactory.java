@@ -18,7 +18,7 @@ public class ControllerFactory {
     public ControllerFactory() throws SQLException, IOException {
         this.tourListModel = new TourListModel();
         this.tourModel = new TourModel();
-        this.tourAddModel = new TourAddModel();
+        this.tourAddModel = new TourAddModel(tourModel);
         this.tourDetailsModel = new TourDetailsModel();
     }
 

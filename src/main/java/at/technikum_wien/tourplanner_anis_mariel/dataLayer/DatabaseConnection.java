@@ -140,6 +140,10 @@ public class DatabaseConnection implements IDataLayer{
             TourModel temp = new TourModel();
             temp.setId(result.getInt("tourid_pk"));
             temp.setName(result.getString("tourname"));
+            temp.setFrom(result.getString("from"));
+            temp.setTo(result.getString("to"));
+            temp.setDescription(result.getString("description"));
+            temp.setDetail(result.getString("details"));
 
             tourItemList.add(temp);
 

@@ -46,7 +46,18 @@ public class BusinessImplementation implements IBusinessLayer {
 
     @Override
     public boolean UpdateTourItem(TourModel tourModel) throws SQLException, FileNotFoundException {
-        return false;
+//        Logger log = LogManager.getLogger(AppManagerImpl.class);
+//        log.info("Update tour item");
+        ITourDao tourItemDAO = DataFactory.CreateTourDao();
+//        IFileAccess fileAccess = DALFactory.GetFileAccess();
+//        fileAccess.saveImage(MapQuestManager.requestRouteImage(tourItem.getStart(),tourItem.getEnd()),tourItem.getId());
+        //tourItem.setDistance(requestRouteDistance(tourItem.getStart(),tourItem.getEnd()));
+        if (tourItemDAO == null){
+          //  log.error("Cant access TourItemDAO");
+            System.out.println("Cant access TourItem");
+            return false;
+        }
+        return tourItemDAO.updateTourItem(tourModel);
     }
 
     @Override

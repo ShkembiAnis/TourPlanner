@@ -21,6 +21,7 @@ public class CreateTourDao implements ITourDao {
     private final String SQL_NEXT_ID = "SELECT CAST(max(tourid_pk)+1 as INTEGER) FROM tour";
     private final String SQL_GET_ALL_ITEMS = "SELECT * FROM \"tour\";";
     private final String SQL_DELETE_TOUR = "DELETE FROM \"tour\" WHERE \"tourid_pk\"=CAST(? AS INTEGER);";
+    private final String SQL_UPDATE_TOUR = "UPDATE \"tour\" SET \"tourname\" = ?,\"from\" = ?,\"to\" = ?,\"description\" = ?,\"details\" = ? WHERE \"tourid_pk\"=CAST(? AS INTEGER);";
 
     public CreateTourDao() throws FileNotFoundException {
         dataLayer = DataFactory.getDatabase();
@@ -43,7 +44,7 @@ public class CreateTourDao implements ITourDao {
 
     @Override
     public TourModel addTour(TourModel tourModel) throws SQLException, IOException {
-        ArrayList<Object> parameters = createTourItemParam(tourModel);
+        ArrayList<Object> parameters = createInitialTourParam(tourModel);
         int result = dataLayer.insertTour(SQL_INSERT_TOUR, parameters);
 
         return findItemByID(result);
@@ -51,8 +52,11 @@ public class CreateTourDao implements ITourDao {
 
 
     @Override
-    public boolean updateTourItem(TourModel tourModel) throws SQLException {
-        return false;
+    public boolean updateTourItem(TourModel tourModel) throws SQLException, FileNotFoundException {
+        ArrayList<Object> parameters = createTourModelParam(tourModel);
+        int check = dataLayer.updateTour(SQL_UPDATE_TOUR, parameters);
+
+        return check > 0;
     }
 
     @Override
@@ -68,11 +72,25 @@ public class CreateTourDao implements ITourDao {
         return true;
     }
 
-    private ArrayList<Object> createTourItemParam(TourModel tourModel) throws SQLException, FileNotFoundException {
+    private ArrayList<Object> createInitialTourParam(TourModel tourModel) throws SQLException, FileNotFoundException {
         ArrayList<Object> parameters = new ArrayList<>();
-        int temp = dataLayer.getMaxId(SQL_NEXT_ID);
-        parameters.add(temp);
+
+        parameters.add(dataLayer.getMaxId(SQL_NEXT_ID));
         parameters.add(tourModel.getName());
+
+        return parameters;
+    }
+
+    private ArrayList<Object> createTourModelParam(TourModel tourModel) throws SQLException, FileNotFoundException {
+        ArrayList<Object> parameters = new ArrayList<>();
+
+        parameters.add(tourModel.getName());
+        parameters.add(tourModel.getFrom());
+        parameters.add(tourModel.getTo());
+        parameters.add(tourModel.getDescription());
+        parameters.add(tourModel.getDetail());
+        parameters.add(tourModel.getId());
+
 
         return parameters;
     }

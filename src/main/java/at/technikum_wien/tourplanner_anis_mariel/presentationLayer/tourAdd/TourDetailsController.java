@@ -83,7 +83,7 @@ public class TourDetailsController implements Initializable {
         this.tourDesc.textProperty().bindBidirectional(this.tourDetailsModel.getTourDescProperty());
         this.tourFrom.textProperty().bindBidirectional(this.tourDetailsModel.getTourFromProperty());
         this.tourTo.textProperty().bindBidirectional(this.tourDetailsModel.getTourToProperty());
-        this.tourDist.textProperty().bindBidirectional(this.tourDetailsModel.getTourToProperty());
+        this.tourDist.textProperty().bindBidirectional(this.tourDetailsModel.getTourDistanceProperty());
 
         //Binding visibility
         this.tourName.visibleProperty().bind(this.tourDetailsModel.getEditModeProperty());
@@ -97,7 +97,7 @@ public class TourDetailsController implements Initializable {
         this.tourDescLabel.textProperty().bind(this.tourDetailsModel.getTourDescProperty());
         this.tourFromLabel.textProperty().bind(this.tourDetailsModel.getTourFromProperty());
         this.tourToLabel.textProperty().bind(this.tourDetailsModel.getTourToProperty());
-        this.tourDistLabel.textProperty().bindBidirectional(this.tourDetailsModel.getTourToProperty());
+        this.tourDistLabel.textProperty().bindBidirectional(this.tourDetailsModel.getTourDistanceProperty());
 
         //Binding visibility
         this.tourNameLabel.visibleProperty().bind(this.tourDetailsModel.getWorkingModeProperty());
@@ -118,8 +118,12 @@ public class TourDetailsController implements Initializable {
 
         //updetojm elementint e listes
         tempTourModel.setName(tourDetailsModel.getTourName());
+        tempTourModel.setFrom(tourDetailsModel.getTourFrom());
+        tempTourModel.setTo(tourDetailsModel.getTourTo());
+        tempTourModel.setDescription(tourDetailsModel.getTourDesc());
+        tempTourModel.setDetail(tourDetailsModel.getTourDistance());
 
         //save to database
-        businessLayer.CreateTourItem(tempTourModel);
+        businessLayer.UpdateTourItem(tempTourModel);
     }
 }
