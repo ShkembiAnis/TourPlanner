@@ -31,15 +31,15 @@ public class BusinessImplementation implements IBusinessLayer {
     public TourModel CreateTourItem(TourModel tourModel) throws SQLException, IOException {
 //        Logger log = LogManager.getLogger(AppManagerImpl.class);
 //        log.info("Create tour item");
-        ITourDao tourItemDAO = DataFactory.CreateTourDao();
+        ITourDao tourDAO = DataFactory.CreateTourDao();
         //IFileAccess fileAccess = DALFactory.GetFileAccess();
         //tourItem.setDistance(requestRouteDistance(tourItem.getStart(),tourItem.getEnd()));
-        if (tourItemDAO == null){
+        if (tourDAO == null){
             //log.error("Cant access TourItemDAO");
             System.out.println("TourItemDao null");
             return null;
         }
-        TourModel result = tourItemDAO.addTour(tourModel);
+        TourModel result = tourDAO.addTour(tourModel);
         //fileAccess.saveImage(MapQuestManager.requestRouteImage(tourItem.getStart(),tourItem.getEnd()),result.getId());
         return result;
     }
@@ -51,6 +51,16 @@ public class BusinessImplementation implements IBusinessLayer {
 
     @Override
     public boolean DeleteTourItem(int id) throws SQLException, FileNotFoundException {
-        return false;
+//        Logger log = LogManager.getLogger(AppManagerImpl.class);
+//        log.info("Delete tour items");
+        ITourDao tourDAO = DataFactory.CreateTourDao();
+        //IFileAccess fileAccess = DALFactory.GetFileAccess();
+        //fileAccess.deleteImage(id);
+        if (tourDAO == null){
+            //log.error("Cant access TourItemDAO");
+            System.out.println("Cant access TourItem");
+            return false;
+        }
+        return tourDAO.deleteTourItem(id);
     }
 }

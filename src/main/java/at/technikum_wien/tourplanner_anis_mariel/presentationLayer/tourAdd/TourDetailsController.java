@@ -116,13 +116,10 @@ public class TourDetailsController implements Initializable {
         //marrim modelin e elementit te listes
         TourModel tempTourModel = tourDetailsModel.getTourModel();
 
-        // updetojm elementint e listes
+        //updetojm elementint e listes
         tempTourModel.setName(tourDetailsModel.getTourName());
 
         //save to database
         businessLayer.CreateTourItem(tempTourModel);
-
-
-
     }
 }

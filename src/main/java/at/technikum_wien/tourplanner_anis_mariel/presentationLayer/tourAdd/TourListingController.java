@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import org.w3c.dom.events.MouseEvent;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -36,11 +37,20 @@ public class TourListingController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.tours.setItems(this.tourListModel.getTours());
         this.tours.setCellFactory(
-                tourModelListView -> new TourItemModel(p -> this.deleteTour(p)));
+                tourModelListView -> new TourItemModel(p -> {
+                    try {
+                        this.deleteTour(p);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }));
     }
 
-    private void deleteTour(TourModel tourModel) {
+    private void deleteTour(TourModel tourModel) throws SQLException, FileNotFoundException {
         this.tourListModel.removeTour(tourModel);
+        businessLayer.DeleteTourItem(tourModel.getId());
     }
 
 
