@@ -126,5 +126,8 @@ public class TourDetailsController implements Initializable {
 
         //save to database
         businessLayer.UpdateTourItem(tempTourModel);
+        this.tourDetailsModel.setEditMode(false);
+        this.tourDetailsModel.setEditButton("Edit");
+        this.tourDetailsModel.setWorkMode(true);
     }
 }
