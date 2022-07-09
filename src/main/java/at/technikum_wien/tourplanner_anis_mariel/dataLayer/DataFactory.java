@@ -1,16 +1,18 @@
 package at.technikum_wien.tourplanner_anis_mariel.dataLayer;
 
-import at.technikum_wien.tourplanner_anis_mariel.businessLayer.BusinessImplementation;
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.ConfigManager;
-import at.technikum_wien.tourplanner_anis_mariel.businessLayer.IBusinessLayer;
+import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ITourLogDao;
+import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ManageTourDao;
 import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ITourDao;
+import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ManageTourLogDao;
+import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
+import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
 
 import java.io.FileNotFoundException;
-import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
 
 public class DataFactory {
     private static IDataLayer data;
+    private final static ILoggerWrapper logger = LoggerFactory.getLogger();
 
     public static IDataLayer getDatabase() throws FileNotFoundException {
         if (data == null) {
@@ -36,13 +38,23 @@ public class DataFactory {
         return null;
     }
 
-    public static ITourDao CreateTourDao(){
+    public static ITourDao ManageTourDao(){
         try{
-            Class<CreateTourDao> createDaoClass = (Class<CreateTourDao>) Class.forName(CreateTourDao.class.getName());
+            Class<ManageTourDao> createDaoClass = (Class<ManageTourDao>) Class.forName(ManageTourDao.class.getName());
             return createDaoClass.getConstructor().newInstance();
         } catch (Exception e){
-            //            Logger log = LogManager.getLogger(DALFactory.class);
-//            log.error("Cant create TourDao: " + e.getMessage());
+            logger.error("Cant create TourDao: " + e.getMessage());
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static ITourLogDao ManageTourLogDao() {
+        try {
+            Class<ManageTourLogDao> cls = (Class<ManageTourLogDao>) Class.forName(ManageTourLogDao.class.getName());
+            return cls.getConstructor().newInstance();
+        } catch (Exception e) {
+            logger.error("Cant create TourLogDAO: " + e.getMessage());
             e.printStackTrace();
             return null;
         }

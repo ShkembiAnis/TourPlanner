@@ -22,15 +22,17 @@ public class TourListingController implements Initializable {
 
     private TourListModel tourListModel;
     private TourDetailsModel tourDetailsModel;
+    private TourLogModel tourLogModel;
     private IBusinessLayer businessLayer = BusinessFactory.getBusiness();
     private TourModel tourModel;
 
     @FXML
     public ListView<TourModel> tours = new ListView<>();
 
-    public TourListingController(TourListModel tourListModel, TourDetailsModel tourDetailsModel) {
+    public TourListingController(TourListModel tourListModel, TourDetailsModel tourDetailsModel, TourLogModel tourLogModel) {
         this.tourListModel = tourListModel;
         this.tourDetailsModel = tourDetailsModel;
+        this.tourLogModel = tourLogModel;
     }
 
     @Override
@@ -61,7 +63,7 @@ public class TourListingController implements Initializable {
         //Set TourDetail and TourLog
         if(tourModelList != null){
             tourDetailsModel.setTourModel(tourModelList);
-//            tourLogModel.setTourModel(tourModelList);
+            tourLogModel.setTourModel(tourModelList);
         }
     }
 

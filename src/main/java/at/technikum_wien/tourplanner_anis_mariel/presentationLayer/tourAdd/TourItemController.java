@@ -11,7 +11,6 @@ import java.util.function.Consumer;
 public class TourItemController {
 
     private TourModel tour;
-
     private Consumer<TourModel> onDeleteTourConsumer;
 
     @FXML

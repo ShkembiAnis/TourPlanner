@@ -3,6 +3,10 @@ package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.util.Iterator;
 
 public class TourModel {
 
@@ -12,6 +16,8 @@ public class TourModel {
     private String to;
     private String description;
     private String detail;
+
+    private ObservableList<TourLogItemCellModel> tourLogs = FXCollections.observableArrayList();
 
 
     public TourModel() {
@@ -82,6 +88,23 @@ public class TourModel {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    public ObservableList<TourLogItemCellModel> getTours() {
+        return tourLogs;
+    }
+
+    protected void clearLogs(){
+        this.tourLogs.clear();
+    }
+
+    public void setTourLogs(ObservableList<TourLogItemCellModel> tourLogs){
+        clearLogs();
+        Iterator<TourLogItemCellModel> it = tourLogs.iterator();
+        while (it.hasNext()) {
+            TourLogItemCellModel value = it.next();
+            this.tourLogs.add(value);
+        }
     }
 
 }

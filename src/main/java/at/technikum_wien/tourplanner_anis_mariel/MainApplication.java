@@ -1,17 +1,13 @@
 package at.technikum_wien.tourplanner_anis_mariel;
 
-import at.technikum_wien.tourplanner_anis_mariel.dataLayer.CreateTourDao;
 import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
 import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
-import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerStateBase;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.ControllerFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -26,12 +22,6 @@ public class MainApplication extends Application {
         stage.setTitle("Tour Planner");
         stage.setScene(scene);
         stage.show();
-        //logger.info("test");
-        logger.debug("test");
-        logger.warn("test");
-        logger.error("test");
-        logger.fatal("test");
-
     }
 
     private FXMLLoader getFxmlLoader(ControllerFactory factory) {

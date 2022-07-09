@@ -1,22 +1,19 @@
-package at.technikum_wien.tourplanner_anis_mariel.dataLayer;
+package at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao;
 
-import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ITourDao;
+import at.technikum_wien.tourplanner_anis_mariel.dataLayer.DataFactory;
+import at.technikum_wien.tourplanner_anis_mariel.dataLayer.IDataLayer;
 import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
 import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
-import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourAddModel;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.Array;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-public class CreateTourDao implements ITourDao {
+public class ManageTourDao implements ITourDao {
 
     public final IDataLayer dataLayer;
     private final ILoggerWrapper logger = LoggerFactory.getLogger();
@@ -28,7 +25,7 @@ public class CreateTourDao implements ITourDao {
     private final String SQL_DELETE_TOUR = "DELETE FROM \"tour\" WHERE \"tourid_pk\"=CAST(? AS INTEGER);";
     private final String SQL_UPDATE_TOUR = "UPDATE \"tour\" SET \"tourname\" = ?,\"from\" = ?,\"to\" = ?,\"description\" = ?,\"details\" = ? WHERE \"tourid_pk\"=CAST(? AS INTEGER);";
 
-    public CreateTourDao() throws FileNotFoundException {
+    public ManageTourDao() throws FileNotFoundException {
         dataLayer = DataFactory.getDatabase();
     }
 

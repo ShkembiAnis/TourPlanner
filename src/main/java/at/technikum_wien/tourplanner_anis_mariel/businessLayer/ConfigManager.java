@@ -1,13 +1,17 @@
 package at.technikum_wien.tourplanner_anis_mariel.businessLayer;
 
+import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
+import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Properties;
 
 public class ConfigManager {
+    private final static ILoggerWrapper logger = LoggerFactory.getLogger();
+
     public static String GetConfigProperty(String propertyName) throws FileNotFoundException {
-        //Logger log = LogManager.getLogger(ConfigurationManager.class);
         Properties prop = new Properties();
         String propFileName = "config.properties";
 
@@ -17,7 +21,7 @@ public class ConfigManager {
             prop.load(stream);
             return prop.getProperty(propertyName);
         } catch (Exception e) {
-            //log.error(propertyName + " was not found. " + e.getMessage());
+            logger.error(propertyName + " was not found. " + e.getMessage());
             e.printStackTrace();
         }
         throw new FileNotFoundException(propFileName + " was not found.");

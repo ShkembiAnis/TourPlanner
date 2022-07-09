@@ -6,8 +6,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox GridPane.rowIndex="3" GridPane.columnIndex ="2" GridPane.columnSpan="3" prefHeight="300" xmlns="http://javafx.com/javafx">
-    <Label minWidth="-Infinity" text="Tours Logs"></Label>
-    <ListView></ListView>
+<VBox GridPane.rowIndex="3" GridPane.columnIndex="2" GridPane.columnSpan="3" prefHeight="200"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogController">
+
+    <HBox>
+    <Label fx:id="logLabel" minWidth="-Infinity" text="Log view" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button fx:id="addLogButton" onAction="#addLog" styleClass="editButton" text="+" />
+            <Button fx:id="saveLogButton" onAction="#saveLog" styleClass="editButton" text="save" />
+    </HBox>
+    <HBox prefHeight="61.0" prefWidth="450.0" >
+            <Pane minWidth="32" />
+            <Label minWidth="110" text="Date" />
+            <Label minWidth="110" text="Comment" />
+            <Label minWidth="110" text="Difficulty" />
+            <Label minWidth="110" text="Total Time" />
+            <Label minWidth="110" text="Weather" />
+            <Label minWidth="110" text="Rating" />
+    </HBox>
+    <HBox>
+        <ListView fx:id="listView" layoutX="5.0" layoutY="3.0" prefHeight="400.0" prefWidth="700.0" />
+    </HBox>
 </VBox>
 

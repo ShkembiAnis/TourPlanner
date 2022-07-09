@@ -1,8 +1,11 @@
 package at.technikum_wien.tourplanner_anis_mariel.dataLayer;
 
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.ConfigManager;
+import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ITourDao;
 import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
 import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
 
 import java.io.FileNotFoundException;
@@ -99,10 +102,10 @@ public class DatabaseConnection implements IDataLayer{
             if(tourType.getTypeName().equals(TourModel.class.getName())) {
                 return (List<T>) QueryTourItemDataFromResultSet(result);
             }
-//            if(tourType.getTypeName().equals(TourLog.class.getName())) {
-//                return (List<T>) QueryDataLogDataFromResultSet(result);
-//            }
-        } catch (SQLException | IOException e){
+            if(tourType.getTypeName().equals(TourLogModel.class.getName())) {
+                return (List<T>) QueryDataLogDataFromResultSet(result);
+            }
+        } catch (SQLException | ParseException | IOException e){
             logger.error("Reading data failed: " + query + " - " + e.getMessage());
             e.printStackTrace();
         }
@@ -122,14 +125,14 @@ public class DatabaseConnection implements IDataLayer{
             if(tourType.getTypeName().equals(TourModel.class.getName())) {
                 return (List<T>) QueryTourItemDataFromResultSet(result);
             }
-//            if(tourType.getTypeName().equals(TourLog.class.getName())) {
-//                return (List<T>) QueryDataLogDataFromResultSet(result);
-//            }
-        } catch (SQLException | FileNotFoundException e){
+            if(tourType.getTypeName().equals(TourLogItemCellModel.class.getName())) {
+                return (List<T>) QueryDataLogDataFromResultSet(result);
+            }
+        } catch (SQLException | ParseException | FileNotFoundException e){
             logger.error("Creating data failed: " + query + " - " + e.getMessage());
             e.printStackTrace();
         }
-            throw new SQLException("Creating data failed: " + query);
+        throw new SQLException("Creating data failed: " + query);
     }
 
     private Object QueryTourItemDataFromResultSet(ResultSet result) throws SQLException {
@@ -154,6 +157,26 @@ public class DatabaseConnection implements IDataLayer{
 //                    result.getString("Description"),
 //                    result.getFloat("Distance")
            // ));
+        }
+        return tourItemList;
+    }
+
+    private List<TourLogItemCellModel> QueryDataLogDataFromResultSet(ResultSet result) throws SQLException, ParseException, IOException {
+        List<TourLogItemCellModel> tourItemList = new ArrayList<>();
+        ITourDao tourItemDAO = DataFactory.ManageTourDao();
+
+        while (result.next()) {
+            assert tourItemDAO != null;
+            TourLogItemCellModel temp = new TourLogItemCellModel();
+            temp.setDate(result.getString("date"));
+            temp.setComment(result.getString("comment"));
+            temp.setDifficulty(result.getString("difficulty"));
+            temp.setTotalTime(result.getString("time"));
+            temp.setWeather(result.getString("weather"));
+            temp.setRating(result.getString("rating"));
+
+            tourItemList.add(temp);
+
         }
         return tourItemList;
     }
