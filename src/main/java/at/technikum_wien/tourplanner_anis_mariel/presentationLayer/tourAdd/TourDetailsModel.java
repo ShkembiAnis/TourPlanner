@@ -140,6 +140,11 @@ public class TourDetailsModel {
     //prej majtas vlerat ruhet djathtas
     public void setTourModel(TourModel tourModel) {
         setTourDetailName(tourModel.getName());
+        setTourDetailFrom(tourModel.getFrom());
+        setTourDetailTo(tourModel.getTo());
+        setTourDetailDesc(tourModel.getDescription());
+        setTourDetailDistance(tourModel.getDetail());
+
 
         this.tourModel = tourModel;
     }

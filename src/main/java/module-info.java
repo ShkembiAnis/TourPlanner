@@ -6,6 +6,7 @@ module at.technikum_wien.tourplanner_anis_mariel {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
+    requires org.apache.logging.log4j;
 
     opens at.technikum_wien.tourplanner_anis_mariel to javafx.fxml;
     exports at.technikum_wien.tourplanner_anis_mariel;

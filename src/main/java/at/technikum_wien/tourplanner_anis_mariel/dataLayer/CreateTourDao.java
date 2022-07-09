@@ -1,6 +1,8 @@
 package at.technikum_wien.tourplanner_anis_mariel.dataLayer;
 
 import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ITourDao;
+import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
+import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourAddModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
 
@@ -11,10 +13,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CreateTourDao implements ITourDao {
 
     public final IDataLayer dataLayer;
+    private final ILoggerWrapper logger = LoggerFactory.getLogger();
 
     private final String SQL_FIND_BY_ID = "SELECT * FROM \"tour\" WHERE \"tourid_pk\"=CAST(? AS INTEGER);";
     private final String SQL_INSERT_TOUR = "INSERT INTO \"tour\" (\"tourid_pk\", \"tourname\") VALUES (CAST(? AS INTEGER), ?);";
@@ -36,8 +41,7 @@ public class CreateTourDao implements ITourDao {
         if (tourItems.stream().findFirst().isPresent()){
             return tourItems.stream().findFirst().get();
         } else {
-//            Logger log = LogManager.getLogger(TourItemPostgresDAO.class);
-//            log.error("No Item with ID: " + itemId);
+            logger.error("No Item with ID: " + itemId);
             return null;
         }
     }
@@ -90,7 +94,6 @@ public class CreateTourDao implements ITourDao {
         parameters.add(tourModel.getDescription());
         parameters.add(tourModel.getDetail());
         parameters.add(tourModel.getId());
-
 
         return parameters;
     }

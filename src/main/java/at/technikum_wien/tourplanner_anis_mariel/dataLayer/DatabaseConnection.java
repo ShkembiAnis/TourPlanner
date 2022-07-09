@@ -1,6 +1,8 @@
 package at.technikum_wien.tourplanner_anis_mariel.dataLayer;
 
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.ConfigManager;
+import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
+import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
 
 import java.io.FileNotFoundException;
@@ -14,6 +16,7 @@ import java.util.List;
 public class DatabaseConnection implements IDataLayer{
 
     private final String databaseConnString;
+    private final ILoggerWrapper logger = LoggerFactory.getLogger();
 
     public DatabaseConnection(String databaseConnString) {
         this.databaseConnString = databaseConnString;
@@ -25,9 +28,8 @@ public class DatabaseConnection implements IDataLayer{
         try {
             return DriverManager.getConnection(databaseConnString, name, pass);
         } catch (SQLException e) {
-//            Logger log = LogManager.getLogger(Database.class);
-//            log.error("Establishing connection failed: " + e.getMessage());
-            System.out.println("Connection failure.");
+            logger.error("Establishing connection failed: " + e.getMessage());
+            //System.out.println("Connection failure.");
             e.printStackTrace();
         }
         throw new SQLException("Establishing connection failed.");
@@ -49,8 +51,7 @@ public class DatabaseConnection implements IDataLayer{
                 }
             }
         } catch (SQLException | FileNotFoundException e){
-//            Logger log = LogManager.getLogger(Database.class);
-//            log.error("SQL Error: " + sqlQuery + " - " + e.getMessage());
+            logger.error("SQL Error: " + query + " - " + e.getMessage());
             e.printStackTrace();
         }
         throw new SQLException("SQL Error " + query);
@@ -82,8 +83,8 @@ public class DatabaseConnection implements IDataLayer{
                 return result.getInt(1);
             }
         } catch (SQLException e) {
-//        log.error("Could not get id from last Tour inserted!");
-//        log.error(e.getMessage());
+        logger.error("Could not get id from last Tour inserted!");
+        logger.error(e.getMessage());
             e.printStackTrace();
         }
         return 0;
@@ -102,8 +103,7 @@ public class DatabaseConnection implements IDataLayer{
 //                return (List<T>) QueryDataLogDataFromResultSet(result);
 //            }
         } catch (SQLException | IOException e){
-//            Logger log = LogManager.getLogger(Database.class);
-//            log.error("Reading data failed: " + sqlQuery + " - " + e.getMessage());
+            logger.error("Reading data failed: " + query + " - " + e.getMessage());
             e.printStackTrace();
         }
         throw new SQLException("Reading data failed. " + query);
@@ -126,8 +126,7 @@ public class DatabaseConnection implements IDataLayer{
 //                return (List<T>) QueryDataLogDataFromResultSet(result);
 //            }
         } catch (SQLException | FileNotFoundException e){
-//            Logger log = LogManager.getLogger(Database.class);
-//            log.error("Creating data failed: " + sqlQuery + " - " + e.getMessage());
+            logger.error("Creating data failed: " + query + " - " + e.getMessage());
             e.printStackTrace();
         }
             throw new SQLException("Creating data failed: " + query);

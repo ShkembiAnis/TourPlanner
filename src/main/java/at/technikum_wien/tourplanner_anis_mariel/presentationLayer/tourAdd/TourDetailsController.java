@@ -117,6 +117,7 @@ public class TourDetailsController implements Initializable {
         TourModel tempTourModel = tourDetailsModel.getTourModel();
 
         //updetojm elementint e listes
+        //tempTourModel.setId(tourDetailsModel.getTourModel().getId());
         tempTourModel.setName(tourDetailsModel.getTourName());
         tempTourModel.setFrom(tourDetailsModel.getTourFrom());
         tempTourModel.setTo(tourDetailsModel.getTourTo());
