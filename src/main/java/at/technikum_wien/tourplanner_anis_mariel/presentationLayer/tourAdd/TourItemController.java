@@ -21,8 +21,6 @@ public class TourItemController {
 
     public TourItemController(){}
 
-    //public TourItemController(TourItemModel tourItemModel) { }
-
     public Node getTourItemBox() {
         return box;
     }
@@ -39,6 +37,4 @@ public class TourItemController {
     public void addListenerForDeleteTour(Consumer<TourModel> listener) {
         this.onDeleteTourConsumer = listener;
     }
-
-
 }

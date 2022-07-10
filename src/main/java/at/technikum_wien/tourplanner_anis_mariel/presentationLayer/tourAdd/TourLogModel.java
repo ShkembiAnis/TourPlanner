@@ -9,7 +9,17 @@ public class TourLogModel {
 
     private StringProperty tourLog;
     private ObservableList<TourLogItemCellModel> tourLogs = FXCollections.observableArrayList();
-    private TourModel tourModel;
+    private TourModel tourModel = new TourModel();
+
+    private Integer logId;
+
+    public Integer getLogId() {
+        return logId;
+    }
+
+    public void setLogId(Integer logId) {
+        this.logId = logId;
+    }
 
     private Integer tourId;
 
@@ -58,17 +68,13 @@ public class TourLogModel {
 
     //set ListView to LogListView
     private void setLogModel(TourModel tourModel) {
-//        tourModel.getTours().forEach(tourLog -> {
-//            tourLogs.add(tourLog);
-//        });
-//        this.tourModel = tourModel;
         setTourId(tourModel.getId());
     }
 
     //save ListView to be the Same as the modified LogListView
     public void saveTourModel() {
         if(this.tourModel != null){
-            this.tourModel.setTourLogs(getTours());
+            this.tourModel.setTourLogs(tourModel.getTours());
         }
     }
 }

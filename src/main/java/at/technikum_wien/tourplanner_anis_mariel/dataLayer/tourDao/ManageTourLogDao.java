@@ -1,6 +1,9 @@
 package at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao;
 
+import at.technikum_wien.tourplanner_anis_mariel.dataLayer.DataFactory;
 import at.technikum_wien.tourplanner_anis_mariel.dataLayer.IDataLayer;
+import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
+import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
@@ -14,19 +17,39 @@ import java.util.List;
 
 public class ManageTourLogDao implements ITourLogDao{
     private final IDataLayer dataLayer;
+    private final ILoggerWrapper logger = LoggerFactory.getLogger();
 
-    public ManageTourLogDao(IDataLayer dataLayer) throws FileNotFoundException{
-        this.dataLayer = dataLayer;
+    private final String SQL_FIND_BY_LOG_ID = "SELECT * FROM \"tourlog\" WHERE \"logId\"=CAST(? AS INTEGER);";
+    private final String SQL_FIND_BY_TOUR_ID = "SELECT * FROM \"tourlog\" WHERE \"tourId\"=CAST(? AS INTEGER);";
+    private final String SQL_INSERT_LOG = "INSERT INTO \"tourlog\" (\"logId\",\"tourId\",\"date\",\"comment\",\"difficulty\",\"time\",\"weather\",\"rating\") VALUES (CAST(? AS INTEGER), CAST(? AS INTEGER), ?, ?, ?, ?, ?, ?);";
+    private final String SQL_UPDATE_LOG = "UPDATE \"tourlog\" SET \"date\" = ?,\"comment\" = ?,\"difficulty\" = ?,\"time\" = ?,\"weather\" = ?,\"rating\" = ? WHERE \"tourId\" = CAST(? AS INTEGER);";
+    private final String SQL_DELETE_LOG = "DELETE FROM \"tourlog\" WHERE \"logId\"=CAST(? AS INTEGER);";
+
+    public ManageTourLogDao() throws FileNotFoundException{
+        this.dataLayer = DataFactory.getDatabase();
     }
 
     @Override
     public TourLogModel FindById(Integer logId) throws SQLException, IOException, ParseException {
-        return null;
+        ArrayList<Object> parameters = new ArrayList<>();
+        parameters.add(logId);
+        List<TourLogModel> tourItems = dataLayer.TourReader(SQL_FIND_BY_LOG_ID, parameters, TourLogModel.class);
+
+        if (tourItems.stream().findFirst().isPresent()){
+            return tourItems.stream().findFirst().get();
+        } else {
+            logger.error("No Item with ID: " + logId);
+            return null;
+        }
     }
 
     @Override
     public TourLogModel AddNewItemLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException, IOException, ParseException {
-        return null;
+        ArrayList<Object> parameters = createTourLogParam(tourLogItemCellModel);
+        parameters.add(tourLogItemCellModel.getLogId());
+
+        int resultID = dataLayer.insertTour(SQL_INSERT_LOG, parameters);
+        return FindById(resultID);
     }
 
     @Override

@@ -1,9 +1,11 @@
-package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
+package at.technikum_wien.tourplanner_anis_mariel;
 
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.BusinessFactory;
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.IBusinessLayer;
 import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
 import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemContoller;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -42,7 +44,7 @@ public class TourLogItemModel extends javafx.scene.control.ListCell<TourLogItemC
             fxmlLoader.load();
         }
         catch (IOException e) {
-            logger.error("Could not create Item TourItem.fxml");
+            logger.error("Could not create Item tourLogItem.fxml");
             logger.error(e.getMessage());
             throw new RuntimeException(e);
         }

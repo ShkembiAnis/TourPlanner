@@ -28,6 +28,10 @@
             <TextField fx:id="totalTimeInput"></TextField>
         </StackPane>
         <StackPane prefWidth="110">
+            <Label  fx:id="weather" style="-fx-label-padding: 10; -fx-alignment: center-left"/>
+            <TextField fx:id="weatherInput"></TextField>
+        </StackPane>
+        <StackPane prefWidth="110">
             <Label  fx:id="rating" style="-fx-label-padding: 10; -fx-alignment: center-left"/>
             <TextField fx:id="ratingInput"></TextField>
         </StackPane>

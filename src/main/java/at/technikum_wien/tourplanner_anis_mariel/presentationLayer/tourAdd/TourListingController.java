@@ -42,12 +42,12 @@ public class TourListingController implements Initializable {
                 tourModelListView -> new TourItemModel(p -> {
                     try {
                         this.deleteTour(p);
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    } catch (FileNotFoundException e) {
+                    } catch (SQLException | FileNotFoundException e) {
                         e.printStackTrace();
                     }
-                }));
+                }
+                )
+        );
     }
 
     private void deleteTour(TourModel tourModel) throws SQLException, FileNotFoundException {

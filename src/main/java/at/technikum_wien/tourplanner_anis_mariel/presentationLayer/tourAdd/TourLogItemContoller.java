@@ -35,6 +35,8 @@ public class TourLogItemContoller {
     @FXML
     private TextField totalTimeInput;
     @FXML
+    private TextField weatherInput;
+    @FXML
     private TextField ratingInput;
 
     @FXML
@@ -62,18 +64,18 @@ public class TourLogItemContoller {
         this.weather.visibleProperty().bindBidirectional(this.tourLogItemCellModel.getWorkingModeProperty());
         this.rating.visibleProperty().bind(this.tourLogItemCellModel.getWorkingModeProperty());
 
-//        //Bind text value
-//        this.commentInput.textProperty().bindBidirectional(this.tourLogItemCellModel.commentProperty());
-//        this.difficultyInput.textProperty().bindBidirectional(this.tourLogItemCellModel.difficultyProperty());
-//        this.totalTimeInput.textProperty().bindBidirectional(this.tourLogItemCellModel.totalTimeProperty());
-//        this.weather.textProperty().bindBidirectional(this.tourLogItemCellModel.weatherProperty());
-//        this.ratingInput.textProperty().bindBidirectional(this.tourLogItemCellModel.ratingProperty());
+        //Bind text value
+        this.commentInput.textProperty().bindBidirectional(this.tourLogItemCellModel.commentProperty());
+        this.difficultyInput.textProperty().bindBidirectional(this.tourLogItemCellModel.difficultyProperty());
+        this.totalTimeInput.textProperty().bindBidirectional(this.tourLogItemCellModel.totalTimeProperty());
+        this.weatherInput.textProperty().bindBidirectional(this.tourLogItemCellModel.weatherProperty());
+        this.ratingInput.textProperty().bindBidirectional(this.tourLogItemCellModel.ratingProperty());
 
         //Bind visibility
         this.commentInput.visibleProperty().bind(this.tourLogItemCellModel.getEditModeProperty());
         this.difficultyInput.visibleProperty().bind(this.tourLogItemCellModel.getEditModeProperty());
         this.totalTimeInput.visibleProperty().bind(this.tourLogItemCellModel.getEditModeProperty());
-        this.weather.visibleProperty().bind(this.tourLogItemCellModel.getEditModeProperty());
+        this.weatherInput.visibleProperty().bind(this.tourLogItemCellModel.getEditModeProperty());
         this.ratingInput.visibleProperty().bind(this.tourLogItemCellModel.getEditModeProperty());
     }
 

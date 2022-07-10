@@ -54,7 +54,7 @@ public class DataFactory {
             Class<ManageTourLogDao> cls = (Class<ManageTourLogDao>) Class.forName(ManageTourLogDao.class.getName());
             return cls.getConstructor().newInstance();
         } catch (Exception e) {
-            logger.error("Cant create TourLogDAO: " + e.getMessage());
+            logger.error("Cant create TourLogDao: " + e.getMessage());
             e.printStackTrace();
             return null;
         }

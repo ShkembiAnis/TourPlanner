@@ -168,6 +168,8 @@ public class DatabaseConnection implements IDataLayer{
         while (result.next()) {
             assert tourItemDAO != null;
             TourLogItemCellModel temp = new TourLogItemCellModel();
+            temp.setLogId(result.getInt("logId"));
+            temp.setTourId(result.getInt("tourId"));
             temp.setDate(result.getString("date"));
             temp.setComment(result.getString("comment"));
             temp.setDifficulty(result.getString("difficulty"));
@@ -176,10 +178,7 @@ public class DatabaseConnection implements IDataLayer{
             temp.setRating(result.getString("rating"));
 
             tourItemList.add(temp);
-
         }
         return tourItemList;
     }
-
-
 }

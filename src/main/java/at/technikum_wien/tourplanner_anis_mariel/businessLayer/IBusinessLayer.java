@@ -1,9 +1,8 @@
 package at.technikum_wien.tourplanner_anis_mariel.businessLayer;
 
-import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourAddModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
-import javafx.beans.property.StringProperty;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,9 +20,9 @@ public interface IBusinessLayer {
 
     // Logs
     boolean DeleteTourLog(int id) throws SQLException;
-    TourLogItemCellModel CreateTourLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException, IOException, ParseException;
+    TourLogModel CreateTourLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException, IOException, ParseException;
     boolean UpdateTourLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException;
-    List<TourLogItemCellModel> GetLogsForItem(TourModel tourModel) throws SQLException, IOException, ParseException;
+    List<TourLogModel> GetLogsForItem(TourModel tourModel) throws SQLException, IOException, ParseException;
 
 
 }

@@ -1,12 +1,12 @@
 package at.technikum_wien.tourplanner_anis_mariel.businessLayer;
 
 import at.technikum_wien.tourplanner_anis_mariel.dataLayer.DataFactory;
-import at.technikum_wien.tourplanner_anis_mariel.dataLayer.IDataLayer;
 import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ITourDao;
+import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ITourLogDao;
 import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
 import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
-import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourAddModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
 
 import java.io.FileNotFoundException;
@@ -19,12 +19,14 @@ import java.util.List;
 public class BusinessImplementation implements IBusinessLayer {
     private final ILoggerWrapper logger = LoggerFactory.getLogger();
 
+
+    // Tours
     @Override
     public List<TourModel> GetItems() throws SQLException, IOException {
         logger.debug("Get tour items");
         ITourDao tourItemDAO = DataFactory.ManageTourDao();
         if (tourItemDAO == null){
-            logger.error("Cant access TourItemDAO");
+            logger.error("Cant access TourItemDao");
             return new ArrayList<>();
         }
         return tourItemDAO.GetItems();
@@ -37,7 +39,7 @@ public class BusinessImplementation implements IBusinessLayer {
         //IFileAccess fileAccess = DALFactory.GetFileAccess();
         //tourItem.setDistance(requestRouteDistance(tourItem.getStart(),tourItem.getEnd()));
         if (tourDAO == null){
-            logger.error("Cant access TourItemDAO");
+            logger.error("Cant access TourItemDao");
             return null;
         }
         TourModel result = tourDAO.addTour(tourModel);
@@ -53,7 +55,7 @@ public class BusinessImplementation implements IBusinessLayer {
 //        fileAccess.saveImage(MapQuestManager.requestRouteImage(tourItem.getStart(),tourItem.getEnd()),tourItem.getId());
         //tourItem.setDistance(requestRouteDistance(tourItem.getStart(),tourItem.getEnd()));
         if (tourItemDAO == null){
-            logger.error("Cant access TourItemDAO");
+            logger.error("Cant access TourItemDao");
             return false;
         }
         return tourItemDAO.updateTourItem(tourModel);
@@ -66,22 +68,36 @@ public class BusinessImplementation implements IBusinessLayer {
         //IFileAccess fileAccess = DALFactory.GetFileAccess();
         //fileAccess.deleteImage(id);
         if (tourDAO == null){
-            logger.error("Cant access TourItemDAO");
+            logger.error("Cant access TourItemDao");
             return false;
         }
         return tourDAO.deleteTourItem(id);
     }
 
+
+    // Log
     @Override
-    public List<TourLogItemCellModel> GetLogsForItem(TourModel tourModel) throws SQLException, IOException, ParseException {
-        return null;
+    public List<TourLogModel> GetLogsForItem(TourModel tourModel) throws SQLException, IOException, ParseException {
+        logger.debug("Get logs for items");
+        ITourLogDao tourLogDao = DataFactory.ManageTourLogDao();
+        if (tourLogDao == null){
+            logger.error("Cant access TourLogDao");
+            return null;
+        }
+        return tourLogDao.GetLogsForItem(tourModel);
     }
 
 
 
     @Override
-    public TourLogItemCellModel CreateTourLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException, IOException, ParseException {
-        return null;
+    public TourLogModel CreateTourLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException, IOException, ParseException {
+        logger.debug("Create Tour Log");
+        ITourLogDao tourLogDao = DataFactory.ManageTourLogDao();
+        if (tourLogDao == null){
+            logger.error("Cant access TourLogDao");
+            return null;
+        }
+        return tourLogDao.AddNewItemLog(tourLogItemCellModel);
     }
 
     @Override

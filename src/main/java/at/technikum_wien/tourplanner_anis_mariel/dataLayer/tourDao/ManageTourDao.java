@@ -94,5 +94,4 @@ public class ManageTourDao implements ITourDao {
 
         return parameters;
     }
-
 }

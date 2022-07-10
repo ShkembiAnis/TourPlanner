@@ -13,31 +13,59 @@ import java.sql.SQLException;
 
 public class TourLogItemCellModel {
     @FXML
-    private StringProperty date = new SimpleStringProperty("dummy");
+    private StringProperty date;
     @FXML
-    private StringProperty comment = new SimpleStringProperty("dummy");
+    private StringProperty comment;
     @FXML
-    private StringProperty difficulty = new SimpleStringProperty("dummy");
+    private StringProperty difficulty;
     @FXML
-    private StringProperty totalTime = new SimpleStringProperty("dummy");
+    private StringProperty totalTime;
     @FXML
-    private StringProperty weather = new SimpleStringProperty("dummy");
+    private StringProperty weather;
     @FXML
-    private StringProperty rating = new SimpleStringProperty("dummy");
+    private StringProperty rating;
+
     public IBusinessLayer businessLayer = BusinessFactory.getBusiness();
 
-    private String name;
-    private TourModel tourModel;
+    //private String name;
+    //private TourModel tourModel;
 
 
+//    public TourLogItemCellModel (StringProperty date, StringProperty comment,
+//                                 StringProperty difficulty, StringProperty totalTime,
+//                                 StringProperty weather, StringProperty rating){
+//        this.date = date;
+//        this.comment = comment;
+//        this.difficulty = difficulty;
+//        this. totalTime = totalTime;
+//        this.weather = weather;
+//        this.rating = rating;
+//    }
 
+    public TourLogItemCellModel(){
+        date = new SimpleStringProperty("dummy");
+        comment = new SimpleStringProperty("dummy");
+        difficulty = new SimpleStringProperty("dummy");
+        totalTime = new SimpleStringProperty("dummy");
+        weather = new SimpleStringProperty("dummy");
+        rating = new SimpleStringProperty("dummy");
+    }
+
+    private Integer logId;
+
+    public Integer getLogId() {
+        return logId;
+    }
+
+    public void setLogId(Integer logId) {
+        this.logId = logId;
+    }
 
     private Integer tourId;
 
     public Integer getTourId() {
         return tourId;
     }
-
 
     public void setTourId(Integer tourId){
         this.tourId = tourId;
@@ -71,9 +99,9 @@ public class TourLogItemCellModel {
         this.comment.set(comment);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public String getDifficulty() {
         return difficulty.get();
@@ -147,9 +175,9 @@ public class TourLogItemCellModel {
         return editMode;
     }
 
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
 
 
 }

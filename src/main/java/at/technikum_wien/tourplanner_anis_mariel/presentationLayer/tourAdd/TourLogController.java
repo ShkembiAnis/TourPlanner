@@ -1,5 +1,6 @@
 package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 
+import at.technikum_wien.tourplanner_anis_mariel.TourLogItemModel;
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.BusinessFactory;
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.IBusinessLayer;
 import javafx.event.ActionEvent;
@@ -12,7 +13,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
@@ -21,6 +21,7 @@ public class TourLogController implements Initializable {
     private final TourLogModel tourLogModel;
     @FXML
     private Label logLabel = new Label();
+
     @FXML
     public ListView<TourLogItemCellModel> listView = new ListView<>();
 
@@ -37,6 +38,7 @@ public class TourLogController implements Initializable {
 
         //Set up Listview of Logs
         this.listView.setItems(this.tourLogModel.getTours());
+        System.out.println(this.tourLogModel.getTours());
         this.listView.setCellFactory(
                 ToursListView -> new TourLogItemModel(p -> this.deleteProduct(p)));
     }
@@ -45,13 +47,11 @@ public class TourLogController implements Initializable {
         this.tourLogModel.removeTour(model);
     }
 
-
     //Add log button clicked
-    public void addLog(ActionEvent actionEvent) {
-        TourLogItemCellModel t = new TourLogItemCellModel();
-        LocalDateTime now = LocalDateTime.now();
-        t.setDate(String.valueOf(now));
-        listView.getItems().add(t);
+    public void addLog(ActionEvent actionEvent) throws SQLException, IOException, ParseException {
+        TourLogItemCellModel temp = new TourLogItemCellModel();
+        listView.getItems().add(temp);
+        //businessLayer.CreateTourLog(temp);
     }
 
     //Save log button clicked
@@ -61,8 +61,10 @@ public class TourLogController implements Initializable {
         System.out.println(this.tourLogModel.getTourId());
         while (item.hasNext()) {
             TourLogItemCellModel temp = (TourLogItemCellModel) item;
-            temp.setTourId(tourLogModel.getTourId());
+//            temp.setTourId(tourLogModel.getTourId());
+//            temp.setLogId(tourLogModel.getLogId());
             System.out.println(temp.getTourId());
+            System.out.println(temp.getLogId());
             businessLayer.CreateTourLog(temp);
         }
         this.tourLogModel.saveTourModel();
