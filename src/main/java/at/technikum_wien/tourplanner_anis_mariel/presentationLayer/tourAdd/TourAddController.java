@@ -41,4 +41,10 @@ public class TourAddController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.tourName.textProperty().bindBidirectional(this.tourAddModel.nameProperty());
         }
+
+    public void importTour(ActionEvent actionEvent) {
+    }
+
+    public void exportTour(ActionEvent actionEvent) {
+    }
 }

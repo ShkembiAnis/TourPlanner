@@ -13,6 +13,6 @@ public interface ITourLogDao {
     TourLogModel FindById(Integer logId) throws SQLException, IOException, ParseException;
     TourLogModel AddNewItemLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException, IOException, ParseException;
     boolean UpdateLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException;
-    List<TourLogModel> GetLogsForItem(TourModel tourModel) throws SQLException, IOException, ParseException;
+    List<TourLogItemCellModel> GetLogsForItem(TourModel tourModel) throws SQLException, IOException, ParseException;
     boolean DeleteLog(Integer id) throws SQLException;
 }

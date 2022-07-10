@@ -58,7 +58,7 @@ public class ManageTourLogDao implements ITourLogDao{
     }
 
     @Override
-    public List<TourLogModel> GetLogsForItem(TourModel tourModel) throws SQLException, IOException, ParseException {
+    public List<TourLogItemCellModel> GetLogsForItem(TourModel tourModel) throws SQLException, IOException, ParseException {
         return null;
     }
 

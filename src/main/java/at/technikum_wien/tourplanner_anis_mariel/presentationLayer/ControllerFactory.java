@@ -34,7 +34,7 @@ public class ControllerFactory {
         } else if (controllerClass == TourDetailsController.class) {
             return new TourDetailsController(this.tourDetailsModel);
         }else if (controllerClass == TourLogController.class){
-            return new TourLogController(this.tourLogModel);
+            return new TourLogController(this.tourLogModel, this.tourModel);
         }else {
             throw new Exception("Controller not supported " + controllerClass.getName());
         }

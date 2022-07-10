@@ -1,6 +1,8 @@
 package at.technikum_wien.tourplanner_anis_mariel.dataLayer;
 
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.ConfigManager;
+import at.technikum_wien.tourplanner_anis_mariel.dataLayer.fileAccess.FileAccess;
+import at.technikum_wien.tourplanner_anis_mariel.dataLayer.fileAccess.IFileAccess;
 import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ITourLogDao;
 import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ManageTourDao;
 import at.technikum_wien.tourplanner_anis_mariel.dataLayer.tourDao.ITourDao;
@@ -12,6 +14,7 @@ import java.io.FileNotFoundException;
 
 public class DataFactory {
     private static IDataLayer data;
+    private static IFileAccess fileAccess;
     private final static ILoggerWrapper logger = LoggerFactory.getLogger();
 
     public static IDataLayer getDatabase() throws FileNotFoundException {
@@ -58,6 +61,14 @@ public class DataFactory {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static IFileAccess GetFileAccess() throws FileNotFoundException {
+        if (fileAccess == null) {
+            String storagePath = ConfigManager.GetConfigProperty("FileAccessStoragePath");
+            fileAccess = new FileAccess(storagePath);
+        }
+        return fileAccess;
     }
 
 

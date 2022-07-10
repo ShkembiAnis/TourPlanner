@@ -20,5 +20,7 @@
         </StackPane>
     </HBox>
     <fx:include fx:id = "tourListing" source = "tourListing.fxml"/>
+    <Button fx:id="import" text = "import" onAction="#importTour" />
+    <Button fx:id="export" text = "export" onAction="#exportTour" />
 </VBox>
 

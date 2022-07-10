@@ -3,6 +3,7 @@ package at.technikum_wien.tourplanner_anis_mariel.businessLayer;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
+import javafx.scene.image.Image;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,7 +23,14 @@ public interface IBusinessLayer {
     boolean DeleteTourLog(int id) throws SQLException;
     TourLogModel CreateTourLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException, IOException, ParseException;
     boolean UpdateTourLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException;
-    List<TourLogModel> GetLogsForItem(TourModel tourModel) throws SQLException, IOException, ParseException;
+    List<TourLogItemCellModel> GetLogsForItem(TourModel tourModel) throws SQLException, IOException, ParseException;
+
+    // Pdf
+    boolean CreateReportForTour(TourModel tourModel, String path) throws SQLException, IOException, ParseException;
+
+    // Map
+    boolean hasValidRoute(String start, String end);
+    Image requestRouteImage(int id) throws FileNotFoundException;
 
 
 }

@@ -3,12 +3,14 @@ package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.BusinessFactory;
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.ConfigManager;
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.IBusinessLayer;
+import javafx.beans.property.Property;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.controlsfx.control.Rating;
 
@@ -123,6 +125,7 @@ public class TourDetailsController implements Initializable {
         tempTourModel.setTo(tourDetailsModel.getTourTo());
         tempTourModel.setDescription(tourDetailsModel.getTourDesc());
         tempTourModel.setDetail(tourDetailsModel.getTourDistance());
+        tempTourModel.setImage((Property<Image>) businessLayer.requestRouteImage(tempTourModel.getId()));
 
         //save to database
         businessLayer.UpdateTourItem(tempTourModel);
