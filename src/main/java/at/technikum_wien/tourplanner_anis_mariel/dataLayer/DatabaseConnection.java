@@ -32,7 +32,6 @@ public class DatabaseConnection implements IDataLayer{
             return DriverManager.getConnection(databaseConnString, name, pass);
         } catch (SQLException e) {
             logger.error("Establishing connection failed: " + e.getMessage());
-            //System.out.println("Connection failure.");
             e.printStackTrace();
         }
         throw new SQLException("Establishing connection failed.");

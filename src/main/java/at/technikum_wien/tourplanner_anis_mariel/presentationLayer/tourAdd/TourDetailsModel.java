@@ -129,7 +129,7 @@ public class TourDetailsModel {
         return imageProperty;
     }
 
-    public void setTourDetailImg(Image image) {
+    public void setImage(Image image) {
         this.imageProperty.set(image);
     }
 

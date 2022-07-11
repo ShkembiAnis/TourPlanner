@@ -41,14 +41,11 @@ public class BusinessImplementation implements IBusinessLayer {
     public TourModel CreateTourItem(TourModel tourModel) throws SQLException, IOException {
         logger.debug("Create tour item");
         ITourDao tourDAO = DataFactory.ManageTourDao();
-        //IFileAccess fileAccess = DALFactory.GetFileAccess();
-        //tourItem.setDistance(requestRouteDistance(tourItem.getStart(),tourItem.getEnd()));
         if (tourDAO == null){
             logger.error("Cant access TourItemDao");
             return null;
         }
         TourModel result = tourDAO.addTour(tourModel);
-        //fileAccess.saveImage(MapQuestManager.requestRouteImage(tourItem.getStart(),tourItem.getEnd()),result.getId());
         return result;
     }
 
@@ -56,9 +53,9 @@ public class BusinessImplementation implements IBusinessLayer {
     public boolean UpdateTourItem(TourModel tourModel) throws SQLException, FileNotFoundException {
         logger.debug("Update tour item");
         ITourDao tourItemDAO = DataFactory.ManageTourDao();
-//        IFileAccess fileAccess = DALFactory.GetFileAccess();
-//        fileAccess.saveImage(MapQuestManager.requestRouteImage(tourItem.getStart(),tourItem.getEnd()),tourItem.getId());
-        //tourItem.setDistance(requestRouteDistance(tourItem.getStart(),tourItem.getEnd()));
+        IFileAccess fileAccess = DataFactory.GetFileAccess();
+        fileAccess.saveImage(MapManager.requestRouteImage(tourModel.getFrom(),tourModel.getTo()),tourModel.getId());
+        //tourModel.setDistance(requestRouteDistance(tourItem.getStart(),tourItem.getEnd()));
         if (tourItemDAO == null){
             logger.error("Cant access TourItemDao");
             return false;

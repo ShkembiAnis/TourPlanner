@@ -18,7 +18,7 @@ public class MapManager {
         HttpURLConnection connection = null;
         try {
             //Create connection
-            URL url = new URL("http://www.mapquestapi.com/directions/v2/route?key=Yadh13E9Z3FiN2w6As9tobdlRwPuCEj3&from=" + escapeCharacters(start) + "&to=" + escapeCharacters(end));
+            URL url = new URL("http://www.mapquestapi.com/directions/v2/route?key=wrq6qJ05GD4w8ZMjbTsZ25C5matuLpNw&from=" + escapeCharacters(start) + "&to=" + escapeCharacters(end));
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type",
@@ -82,7 +82,7 @@ public class MapManager {
             String box = boundingBox.getJSONObject("lr").getFloat("lat") + "," + boundingBox.getJSONObject("lr").getFloat("lng") + "," + boundingBox.getJSONObject("ul").getFloat("lat") + "," + boundingBox.getJSONObject("ul").getFloat("lng");
             params += "&boundingBox="+box;
 
-            URL url = new URL("http://www.mapquestapi.com/staticmap/v5/map?key=Yadh13E9Z3FiN2w6As9tobdlRwPuCEj3" + params);
+            URL url = new URL("http://www.mapquestapi.com/staticmap/v5/map?key=wrq6qJ05GD4w8ZMjbTsZ25C5matuLpNw" + params);
             InputStream is;
             try {
                 is = url.openStream();

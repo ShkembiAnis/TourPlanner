@@ -2,6 +2,7 @@ package at.technikum_wien.tourplanner_anis_mariel.dataLayer.fileAccess;
 
 import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
 import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
+import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourDetailsController;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
@@ -102,7 +103,9 @@ public class FileAccess implements IFileAccess{
         BufferedImage bImage;
         try {
             File initialImage = new File(defaultStorage + id + ".jpg");
+            //File initialImage = new File(defaultStorage + "gokuu.jpg");
             bImage = ImageIO.read(initialImage);
+
         } catch (IOException e) {
             logger.error("Exception occured :" + e.getMessage());
             return null;

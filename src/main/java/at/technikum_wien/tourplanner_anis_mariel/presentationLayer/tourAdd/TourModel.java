@@ -1,10 +1,9 @@
 package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 
-import javafx.beans.property.Property;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.image.Image;
 
 import java.awt.*;
 import java.util.Iterator;
@@ -17,7 +16,7 @@ public class TourModel {
     private String to;
     private String description;
     private String detail;
-    private Property<javafx.scene.image.Image> image;
+    private ObjectProperty<Image> imageProperty = new SimpleObjectProperty<>();
 
     private ObservableList<TourLogItemCellModel> tourLogs = FXCollections.observableArrayList();
 
@@ -25,14 +24,14 @@ public class TourModel {
     public TourModel() {
     }
 
-    public TourModel(Integer Id, StringProperty name, String from, String to, String description, String detail, Property<javafx.scene.image.Image> image) {
+    public TourModel(Integer Id, StringProperty name, String from, String to, String description, String detail, ObjectProperty<Image> image) {
         this.id = id;
         this.name = name;
         this.from = from;
         this.to = to;
         this.description = description;
         this.detail = detail;
-        this.image = image;
+        this.imageProperty = image;
     }
 
     public static TourModel From(TourAddModel source) {
@@ -93,12 +92,12 @@ public class TourModel {
         this.detail = detail;
     }
 
-    public Property<javafx.scene.image.Image> getImage() {
-        return image;
+    public Property<javafx.scene.image.Image> getImageProperty() {
+        return imageProperty;
     }
 
-    public void setImage(Property<javafx.scene.image.Image> image) {
-        this.image = image;
+    public void setImage(Image image) {
+        this.imageProperty.set(image);
     }
 
     public ObservableList<TourLogItemCellModel> getTours() {

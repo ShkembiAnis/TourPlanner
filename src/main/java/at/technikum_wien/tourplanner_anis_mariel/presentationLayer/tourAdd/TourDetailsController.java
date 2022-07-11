@@ -125,7 +125,8 @@ public class TourDetailsController implements Initializable {
         tempTourModel.setTo(tourDetailsModel.getTourTo());
         tempTourModel.setDescription(tourDetailsModel.getTourDesc());
         tempTourModel.setDetail(tourDetailsModel.getTourDistance());
-        tempTourModel.setImage((Property<Image>) businessLayer.requestRouteImage(tempTourModel.getId()));
+        tempTourModel.setImage(businessLayer.requestRouteImage(tempTourModel.getId()));
+        this.tourDetailsModel.setImage(businessLayer.requestRouteImage(tempTourModel.getId()));
 
         //save to database
         businessLayer.UpdateTourItem(tempTourModel);
