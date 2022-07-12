@@ -63,4 +63,17 @@ public class TourItemController {
     public void addListenerForDeleteTour(Consumer<TourModel> listener) {
         this.onDeleteTourConsumer = listener;
     }
+
+    public void exportTour(ActionEvent actionEvent) throws SQLException, IOException, ParseException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialFileName("Tour_" + tour.getName().replaceAll("-","_").replace(" ",""));
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File file = fileChooser.showSaveDialog(stage);
+        if (file != null) {
+            if (!businessLayer.ExportTour(tour, file.getPath())) {
+                logger.error("Export Tour failed. ID: " + tour.getId());
+            }
+        }
+    }
 }

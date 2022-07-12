@@ -36,6 +36,7 @@ public class DatabaseConnection implements IDataLayer{
         }
         throw new SQLException("Establishing connection failed.");
     }
+
     public int executeStatement(String query, ArrayList<Object> parameters) throws SQLException {
         try(Connection conn = CreateConnection();
             PreparedStatement pre = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {

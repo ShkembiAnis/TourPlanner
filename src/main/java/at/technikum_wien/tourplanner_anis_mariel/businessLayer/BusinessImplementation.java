@@ -9,13 +9,18 @@ import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import org.json.JSONObject;
-import javafx.embed.swing.SwingFXUtils;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -153,6 +158,8 @@ public class BusinessImplementation implements IBusinessLayer {
         return null;
     }
 
+
+
     private float requestRouteDistance(String start, String end) {
         logger.debug("Request route distance");
         String jsonString = MapManager.requestRoute(start,end);
@@ -162,5 +169,36 @@ public class BusinessImplementation implements IBusinessLayer {
         }
         JSONObject obj = new JSONObject(jsonString);
         return obj.getJSONObject("route").getFloat("distance");
+    }
+
+    @Override
+    public TourModel ImportTour(String path) throws SQLException, IOException, ParseException {
+        logger.debug("Import tour");
+        IFileAccess fileAccess = DataFactory.GetFileAccess();
+        File file =  fileAccess.loadFile(path);
+        if (file == null){
+            logger.error("Cant access File");
+            return null;
+        }
+        List<String> fileLines = Files.readAllLines(Path.of(file.getAbsolutePath()));
+        StringProperty temp = new SimpleStringProperty(fileLines.get(0) + " (Imported)");
+        TourModel newTour = new TourModel(
+                -1,
+                temp,
+                fileLines.get(1),
+                fileLines.get(2),
+                fileLines.get(3),
+                fileLines.get(4)
+        );
+        TourModel importedTour = CreateTourItem(newTour);
+        return importedTour;
+    }
+
+
+    @Override
+    public boolean ExportTour(TourModel tourModel, String path) throws SQLException, IOException, ParseException {
+        logger.debug("Export tour");
+        IFileAccess fileAccess = DataFactory.GetFileAccess();
+        return fileAccess.exportTour(tourModel, path);
     }
 }

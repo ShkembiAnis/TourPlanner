@@ -2,26 +2,18 @@ package at.technikum_wien.tourplanner_anis_mariel.dataLayer.fileAccess;
 
 import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
 import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
-import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourDetailsController;
-import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
-import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
-
-
-import java.awt.image.BufferedImage;
-
 import com.itextpdf.text.BadElementException;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.Document;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
-
 import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 
 public class FileAccess implements IFileAccess{
     private ILoggerWrapper logger = LoggerFactory.getLogger();
@@ -33,7 +25,7 @@ public class FileAccess implements IFileAccess{
     }
 
     @Override
-    public boolean exportTour(TourModel tourModel, List<TourLogItemCellModel> tourLogs, String filePath) {
+    public boolean exportTour(TourModel tourModel, String filePath) {
         String path = Paths.get(filePath).toString();
         try (FileWriter fileWriter = new FileWriter(path);
              BufferedWriter writer = new BufferedWriter(fileWriter)) {
@@ -45,22 +37,22 @@ public class FileAccess implements IFileAccess{
             writer.newLine();
             writer.write(tourModel.getDescription());
             writer.newLine();
-            writer.write(String.valueOf(tourModel.getDetail()));
+            writer.write(tourModel.getDetail());
             writer.newLine();
-            for (TourLogItemCellModel tourLogModel : tourLogs){
-                writer.write(tourLogModel.getDate());
-                writer.newLine();
-                writer.write(tourLogModel.getComment());
-                writer.newLine();
-                writer.write(tourLogModel.getDifficulty());
-                writer.newLine();
-                writer.write(tourLogModel.getTotalTime());
-                writer.newLine();
-                writer.write(tourLogModel.getWeather());
-                writer.newLine();
-                writer.write(tourLogModel.getRating());
-                writer.newLine();
-            }
+//            for (TourLogItemCellModel tourLogModel : tourLogs){
+//                writer.write(tourLogModel.getDate());
+//                writer.newLine();
+//                writer.write(tourLogModel.getComment());
+//                writer.newLine();
+//                writer.write(tourLogModel.getDifficulty());
+//                writer.newLine();
+//                writer.write(tourLogModel.getTotalTime());
+//                writer.newLine();
+//                writer.write(tourLogModel.getWeather());
+//                writer.newLine();
+//                writer.write(tourLogModel.getRating());
+//                writer.newLine();
+//            }
         } catch (IOException e) {
             logger.error("Cant write File: " + e.getMessage());
             e.printStackTrace();

@@ -32,5 +32,9 @@ public interface IBusinessLayer {
     boolean hasValidRoute(String start, String end);
     Image requestRouteImage(int id) throws FileNotFoundException;
 
+    // Import, Export
+    TourModel ImportTour(String path) throws SQLException, IOException, ParseException;
+    boolean ExportTour(TourModel tourModel, String path) throws SQLException, IOException, ParseException;
+
 
 }

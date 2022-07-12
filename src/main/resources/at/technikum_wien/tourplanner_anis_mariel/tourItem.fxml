@@ -10,7 +10,8 @@
     <children>
         <Label  fx:id="name" style="-fx-label-padding: 10; -fx-alignment: center-left"/>
         <Region HBox.hgrow="ALWAYS"></Region>
-        <Button fx:id="summarizeReport" onAction="#summerizeReport"  text="report" />
+        <Button fx:id="exportTour" onAction="#exportTour"  text="exp" />
+        <Button fx:id="summarizeReport" onAction="#summerizeReport"  text="rep" />
         <Button text="-" onAction="#onDeleteTour" style="-fx-label-padding: 10; -fx-alignment: center-right" />
     </children>
 </HBox>
