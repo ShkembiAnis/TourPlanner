@@ -125,27 +125,27 @@ public class FileAccess implements IFileAccess{
     }
 
     @Override
-    public boolean GenerateReport(TourModel tourModel, List<TourLogItemCellModel> logs, String path) {
+    public boolean GenerateReport(TourModel tourModel, String path) {
         String tourInfo = getTourInfo(tourModel);
-        StringBuilder logContent = new StringBuilder();
+        //StringBuilder logContent = new StringBuilder();
 
-        for (int i = 0; i < logs.size(); i++){
-            logContent.append("\nLog ").append(i + 1).append(":\n");
-            logContent.append("Date: ").append(logs.get(i).getDate()).append("\n");
-            logContent.append("Comment: ").append(logs.get(i).getComment()).append("\n");
-            logContent.append("Difficulty: ").append(logs.get(i).getDifficulty()).append("\n");
-            logContent.append("Time: ").append(logs.get(i).getTotalTime()).append("\n");
-            logContent.append("Weather: ").append(logs.get(i).getWeather()).append("\n");
-            logContent.append("Rating: ").append(logs.get(i).getRating()).append("\n");
-            }
+//        for (int i = 0; i < logs.size(); i++){
+//            logContent.append("\nLog ").append(i + 1).append(":\n");
+//            logContent.append("Date: ").append(logs.get(i).getDate()).append("\n");
+//            logContent.append("Comment: ").append(logs.get(i).getComment()).append("\n");
+//            logContent.append("Difficulty: ").append(logs.get(i).getDifficulty()).append("\n");
+//            logContent.append("Time: ").append(logs.get(i).getTotalTime()).append("\n");
+//            logContent.append("Weather: ").append(logs.get(i).getWeather()).append("\n");
+//            logContent.append("Rating: ").append(logs.get(i).getRating()).append("\n");
+//            }
         try {
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream(path));
             document.open();
             document.add(getTourImage(getImagePath(tourModel.getId())));
             document.add(new Paragraph(tourInfo));
-            document.add(new Paragraph("Logs:"));
-            document.add(new Paragraph(logContent.toString()));
+//            document.add(new Paragraph("Logs:"));
+//            document.add(new Paragraph(logContent.toString()));
             document.close();
             return true;
         } catch (Exception e) {

@@ -15,5 +15,5 @@ public interface IFileAccess {
     String getImagePath(int id);
     BufferedImage loadImage(int id);
     boolean deleteImage(int id);
-    boolean GenerateReport(TourModel tourModel, List<TourLogItemCellModel> logs, String path);
+    boolean GenerateReport(TourModel tourModel, String path);
 }

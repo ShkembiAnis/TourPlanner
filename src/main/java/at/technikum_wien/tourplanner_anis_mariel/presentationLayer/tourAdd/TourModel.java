@@ -92,7 +92,7 @@ public class TourModel {
         this.detail = detail;
     }
 
-    public Property<javafx.scene.image.Image> getImageProperty() {
+    public ObjectProperty<Image> getImageProperty() {
         return imageProperty;
     }
 

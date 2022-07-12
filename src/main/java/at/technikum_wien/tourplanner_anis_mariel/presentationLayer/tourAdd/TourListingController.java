@@ -24,7 +24,6 @@ public class TourListingController implements Initializable {
     private TourDetailsModel tourDetailsModel;
     private TourLogModel tourLogModel;
     private IBusinessLayer businessLayer = BusinessFactory.getBusiness();
-    private TourModel tourModel;
 
     @FXML
     public ListView<TourModel> tours = new ListView<>();
@@ -57,12 +56,13 @@ public class TourListingController implements Initializable {
 
 
     @FXML
-    public void tourItemClicked(javafx.scene.input.MouseEvent mouseEvent) {
+    public void tourItemClicked(javafx.scene.input.MouseEvent mouseEvent) throws FileNotFoundException {
         //Select the model that is clicked
         TourModel tourModelList = tours.getSelectionModel().getSelectedItem();
         //Set TourDetail and TourLog
         if(tourModelList != null){
             tourDetailsModel.setTourModel(tourModelList);
+            tourDetailsModel.setImage(businessLayer.requestRouteImage(tourModelList.getId()));
             tourLogModel.setTourModel(tourModelList);
         }
     }

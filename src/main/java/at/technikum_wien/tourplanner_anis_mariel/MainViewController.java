@@ -32,7 +32,6 @@ public class MainViewController implements Initializable {
         businessLayer = BusinessFactory.getBusiness();
         this.tourAddController.addListener(
                 p -> this.tourListModel.addTour(TourModel.From(p)));
-
     }
 
 }

@@ -82,17 +82,4 @@ public class TourLogController implements Initializable {
         }
         this.tourLogModel.saveTourModel();
     }
-
-    public void summerizeReport(ActionEvent actionEvent) throws SQLException, IOException, ParseException {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialFileName("Report_" + tourModel.getName());
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
-        fileChooser.getExtensionFilters().add(extFilter);
-        File file = fileChooser.showSaveDialog(stage);
-        if (file != null) {
-            if (!businessLayer.CreateReportForTour(tourModel,file.getPath())) {
-                logger.error("Create report failed. Item ID: " + tourModel.getId());
-            }
-        }
-    }
 }

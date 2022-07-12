@@ -29,6 +29,7 @@ public class TourAddController implements Initializable{
     public void addTour(ActionEvent actionEvent) throws SQLException, IOException {
         this.newTourListener.accept(this.tourAddModel);
         TourModel tempTourModel = new TourModel();
+        //tempTourModel.setId(tourAddModel.getId());
         tempTourModel.setName(tourAddModel.getName());
         businessLayer.CreateTourItem(tempTourModel);
     }

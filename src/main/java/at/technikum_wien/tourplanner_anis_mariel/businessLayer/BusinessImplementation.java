@@ -55,7 +55,6 @@ public class BusinessImplementation implements IBusinessLayer {
         ITourDao tourItemDAO = DataFactory.ManageTourDao();
         IFileAccess fileAccess = DataFactory.GetFileAccess();
         fileAccess.saveImage(MapManager.requestRouteImage(tourModel.getFrom(),tourModel.getTo()),tourModel.getId());
-        //tourModel.setDistance(requestRouteDistance(tourItem.getStart(),tourItem.getEnd()));
         if (tourItemDAO == null){
             logger.error("Cant access TourItemDao");
             return false;
@@ -67,8 +66,8 @@ public class BusinessImplementation implements IBusinessLayer {
     public boolean DeleteTourItem(int id) throws SQLException, FileNotFoundException {
         logger.debug("Delete tour items");
         ITourDao tourDAO = DataFactory.ManageTourDao();
-        //IFileAccess fileAccess = DALFactory.GetFileAccess();
-        //fileAccess.deleteImage(id);
+        IFileAccess fileAccess = DataFactory.GetFileAccess();
+        fileAccess.deleteImage(id);
         if (tourDAO == null){
             logger.error("Cant access TourItemDao");
             return false;
@@ -126,7 +125,7 @@ public class BusinessImplementation implements IBusinessLayer {
             logger.error("Cant access FileAccess");
             return false;
         }
-        return fileAccess.GenerateReport(tourModel,tourLogDao.GetLogsForItem(tourModel),path);
+        return fileAccess.GenerateReport(tourModel, path);
     }
 
     // Map
