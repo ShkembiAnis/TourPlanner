@@ -38,6 +38,7 @@ public class TourModel {
     public static TourModel From(TourAddModel source) {
         var newInstance = new TourModel();
         newInstance.name.set(source.getName());
+        newInstance.setId(source.getId());
         return newInstance;
     }
 

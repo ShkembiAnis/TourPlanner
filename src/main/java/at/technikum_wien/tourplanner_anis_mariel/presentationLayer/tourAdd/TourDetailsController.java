@@ -1,20 +1,15 @@
 package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.BusinessFactory;
-import at.technikum_wien.tourplanner_anis_mariel.businessLayer.ConfigManager;
 import at.technikum_wien.tourplanner_anis_mariel.businessLayer.IBusinessLayer;
-import javafx.beans.property.Property;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import org.controlsfx.control.Rating;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -119,14 +114,17 @@ public class TourDetailsController implements Initializable {
         TourModel tempTourModel = tourDetailsModel.getTourModel();
 
         //updetojm elementint e listes
-        //tempTourModel.setId(tourDetailsModel.getTourModel().getId());
+        tempTourModel.setId(tourDetailsModel.getTourModel().getId());
         tempTourModel.setName(tourDetailsModel.getTourName());
         tempTourModel.setFrom(tourDetailsModel.getTourFrom());
         tempTourModel.setTo(tourDetailsModel.getTourTo());
         tempTourModel.setDescription(tourDetailsModel.getTourDesc());
         tempTourModel.setDetail(tourDetailsModel.getTourDistance());
         //tempTourModel.setImage(businessLayer.requestRouteImage(tempTourModel.getId()));
-        this.tourDetailsModel.setImage(businessLayer.requestRouteImage(tempTourModel.getId()));
+        if(tempTourModel.getId()!= null){
+            this.tourDetailsModel.setImage(businessLayer.requestRouteImage(tempTourModel.getId()));
+        }
+
 
         //save to database
         businessLayer.UpdateTourItem(tempTourModel);

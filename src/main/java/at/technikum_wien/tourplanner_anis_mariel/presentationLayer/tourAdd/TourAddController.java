@@ -35,9 +35,9 @@ public class TourAddController implements Initializable{
     private Stage stage = new Stage();
 
     private final StringProperty tourNameField = new SimpleStringProperty("");
-    private final StringProperty tourFromField = new SimpleStringProperty("");
     private final StringProperty tourDetailsField = new SimpleStringProperty("");
     private final ObjectProperty<Image> tourImageView = new SimpleObjectProperty<>();
+    private int id;
 
     @FXML
     private TextField tourName;
@@ -50,11 +50,12 @@ public class TourAddController implements Initializable{
     }
 
     public void addTour(ActionEvent actionEvent) throws SQLException, IOException {
-        this.newTourListener.accept(this.tourAddModel);
         TourModel tempTourModel = new TourModel();
-        //tempTourModel.setId(tourAddModel.getId());
+        //tempTourModel.setId(tourModel.getId());
         tempTourModel.setName(tourAddModel.getName());
-        businessLayer.CreateTourItem(tempTourModel);
+        TourModel t = businessLayer.CreateTourItem(tempTourModel);
+        this.tourAddModel.setId(t.getId());
+        this.newTourListener.accept(this.tourAddModel);
     }
 
     public void addListener(Consumer<TourAddModel> listenToNewTour) {
@@ -87,10 +88,10 @@ public class TourAddController implements Initializable{
         tourNameField.setValue(tempTourModel.getName());
         tourImageView.setValue(businessLayer.requestRouteImage(tempTourModel.getId()));
         tourDetailsField.setValue(
-                "Start: " + tempTourModel.getFrom() + "\n"
-                + "End: " + tempTourModel.getTo() + "\n"
-                + "Distance: " + tempTourModel.getDescription() + "\n"
-                + "Description: " + tempTourModel.getDetail()
+                "From: " + tempTourModel.getFrom() + "\n"
+                + "To: " + tempTourModel.getTo() + "\n"
+                + "Description: " + tempTourModel.getDescription() + "\n"
+                + "Distance: " + tempTourModel.getDetail()
         );
 }
 }

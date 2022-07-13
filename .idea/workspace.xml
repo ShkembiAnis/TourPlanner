@@ -6,22 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="4aec2854-26e0-4424-a2c2-1f140204d08a" name="Changes" comment="whatever">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/businessLayer/BusinessImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/businessLayer/BusinessImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/businessLayer/IBusinessLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/businessLayer/IBusinessLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/dataLayer/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/dataLayer/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/dataLayer/fileAccess/FileAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/dataLayer/fileAccess/FileAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/dataLayer/fileAccess/IFileAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/dataLayer/fileAccess/IFileAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/ControllerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/businessLayer/MapManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/businessLayer/MapManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/dataLayer/tourDao/ManageTourDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/dataLayer/tourDao/ManageTourDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourAddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourAddModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourAddModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourDetailsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourDetailsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourListingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourListingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/technikum_wien/tourplanner_anis_mariel/presentationLayer/tourAdd/TourModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/tourItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/at/technikum_wien/tourplanner_anis_mariel/tourItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/TourImages/0.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BusinessLayerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BusinessLayerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DataLayerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DataLayerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PresentationLayerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PresentationLayerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/tourAdd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/tourItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/tourItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TourImages/0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TourImages/0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TourImages/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TourImages/7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TourImages/gokuu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TourImages7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/HelloApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/TourImages/gokuu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/tourAdd/tourItem.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/at/technikum_wien/tourplanner_anis_mariel/tourList.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +124,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BusinessLayerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TourPlanner_Anis_Mariel" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BusinessLayerTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BusinessLayerTests.testGetRouteDistance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TourPlanner_Anis_Mariel" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BusinessLayerTests" />
+      <option name="METHOD_NAME" value="testGetRouteDistance" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PresentationLayerTests.tourInputAccept" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TourPlanner_Anis_Mariel" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PresentationLayerTests" />
+      <option name="METHOD_NAME" value="tourInputAccept" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TourPlanner_Anis_Mariel [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -144,7 +181,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Maven.TourPlanner_Anis_Mariel [javafx:run]" />
+        <item itemvalue="JUnit.BusinessLayerTests.testGetRouteDistance" />
         <item itemvalue="Application.MainApplication" />
+        <item itemvalue="JUnit.PresentationLayerTests.tourInputAccept" />
+        <item itemvalue="JUnit.BusinessLayerTests" />
       </list>
     </recent_temporary>
   </component>

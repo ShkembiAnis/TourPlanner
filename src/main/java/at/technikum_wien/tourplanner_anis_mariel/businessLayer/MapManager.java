@@ -2,14 +2,13 @@ package at.technikum_wien.tourplanner_anis_mariel.businessLayer;
 
 import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
 import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
-
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.awt.image.BufferedImage;
 import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class MapManager {
     private final static ILoggerWrapper logger = LoggerFactory.getLogger();
@@ -112,6 +111,17 @@ public class MapManager {
         string = string.replaceAll(",","");
         string = string.replaceAll("/","");
         return string;
+    }
+
+    public static String requestRouteDistance(String start, String end) {
+        logger.debug("Request route distance");
+        String jsonString = MapManager.requestRoute(start,end);
+        if (jsonString == null){
+            logger.error("Cant access JsonString");
+            return null;
+        }
+        JSONObject obj = new JSONObject(jsonString);
+        return String.valueOf(obj.getJSONObject("route").getFloat("distance"));
     }
 
 

@@ -4,7 +4,6 @@ import at.technikum_wien.tourplanner_anis_mariel.dataLayer.DataFactory;
 import at.technikum_wien.tourplanner_anis_mariel.dataLayer.IDataLayer;
 import at.technikum_wien.tourplanner_anis_mariel.logger.ILoggerWrapper;
 import at.technikum_wien.tourplanner_anis_mariel.logger.LoggerFactory;
-import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourLogItemCellModel;
 import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
 
 import java.io.FileNotFoundException;
@@ -76,7 +75,8 @@ public class ManageTourDao implements ITourDao {
     private ArrayList<Object> createInitialTourParam(TourModel tourModel) throws SQLException, FileNotFoundException {
         ArrayList<Object> parameters = new ArrayList<>();
 
-        parameters.add(dataLayer.getMaxId(SQL_NEXT_ID));
+        int temp_id = dataLayer.getMaxId(SQL_NEXT_ID);
+        parameters.add(temp_id);
         parameters.add(tourModel.getName());
 
         return parameters;

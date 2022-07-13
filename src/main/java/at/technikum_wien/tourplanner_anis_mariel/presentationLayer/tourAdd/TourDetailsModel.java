@@ -1,6 +1,5 @@
 package at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd;
 
-import at.technikum_wien.tourplanner_anis_mariel.presentationLayer.tourAdd.TourModel;
 import javafx.beans.property.*;
 import javafx.scene.image.Image;
 
@@ -144,7 +143,6 @@ public class TourDetailsModel {
         setTourDetailTo(tourModel.getTo());
         setTourDetailDesc(tourModel.getDescription());
         setTourDetailDistance(tourModel.getDetail());
-
 
         this.tourModel = tourModel;
     }

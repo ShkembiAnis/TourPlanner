@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BusinessImplementation implements IBusinessLayer {
+
     private final ILoggerWrapper logger = LoggerFactory.getLogger();
 
 
@@ -59,7 +60,9 @@ public class BusinessImplementation implements IBusinessLayer {
         logger.debug("Update tour item");
         ITourDao tourItemDAO = DataFactory.ManageTourDao();
         IFileAccess fileAccess = DataFactory.GetFileAccess();
-        fileAccess.saveImage(MapManager.requestRouteImage(tourModel.getFrom(),tourModel.getTo()),tourModel.getId());
+        if(tourModel.getId() != null){
+            fileAccess.saveImage(MapManager.requestRouteImage(tourModel.getFrom(),tourModel.getTo()),tourModel.getId());
+        }
         if (tourItemDAO == null){
             logger.error("Cant access TourItemDao");
             return false;
@@ -108,12 +111,12 @@ public class BusinessImplementation implements IBusinessLayer {
 
     @Override
     public boolean UpdateTourLog(TourLogItemCellModel tourLogItemCellModel) throws SQLException {
-        return false;
+        return false; // not implemented
     }
 
     @Override
     public boolean DeleteTourLog(int id) throws SQLException {
-        return false;
+        return false; // not implemented
     }
 
     // Pdf
@@ -122,7 +125,7 @@ public class BusinessImplementation implements IBusinessLayer {
         logger.debug("Create PDF report for item");
         ITourLogDao tourLogDao = DataFactory.ManageTourLogDao();
         if (tourLogDao == null){
-            logger.error("Cant access TourLogDAO");
+            logger.error("Cant access TourLogDao");
             return false;
         }
         IFileAccess fileAccess = DataFactory.GetFileAccess();
@@ -158,18 +161,12 @@ public class BusinessImplementation implements IBusinessLayer {
         return null;
     }
 
-
-
-    private float requestRouteDistance(String start, String end) {
-        logger.debug("Request route distance");
-        String jsonString = MapManager.requestRoute(start,end);
-        if (jsonString == null){
-            logger.error("Cant access JsonString");
-            return 0;
-        }
-        JSONObject obj = new JSONObject(jsonString);
-        return obj.getJSONObject("route").getFloat("distance");
+    @Override
+    public String requestRouteDistance(String start, String end) {
+        String distance = MapManager.requestRouteDistance(start, end);
+        return distance;
     }
+
 
     @Override
     public TourModel ImportTour(String path) throws SQLException, IOException, ParseException {
