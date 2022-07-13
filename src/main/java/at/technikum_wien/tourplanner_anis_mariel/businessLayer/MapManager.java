@@ -99,7 +99,7 @@ public class MapManager {
         }
     }
 
-    private static String escapeCharacters(String string) {
+    public static String escapeCharacters(String string) {
         string = string.replaceAll(" ","");
         string = string.replaceAll("ä","ae");
         string = string.replaceAll("ü","ue");
